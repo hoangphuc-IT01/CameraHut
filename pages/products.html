@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Camera Hut</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+<main>
+
+    <!-- TIÊU ĐỀ TRANG -->
+    <section style="
+        text-align: center;
+        padding: 55px 20px 25px;
+    ">
+        <h1 style="
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        ">
+            Sản phẩm
+        </h1>
+        <p style="
+            color: #666;
+            font-size: 17px;
+            margin: 0;
+        ">
+            Khám phá các dòng máy ảnh tại Camera Hut
+        </p>
+    </section>
+
+    <!-- KHU VỰC TÌM KIẾM + LỌC -->
+    <section style="
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 25px 40px;
+    ">
+        <!-- TÌM KIẾM -->
+        <div style="
+            max-width: 550px;
+            margin: 0 auto 25px;
+        ">
+            <input
+                type="text"
+                id="search"
+                placeholder="Tìm kiếm máy ảnh..."
+                style="
+                    width: 100%;
+                    height: 48px;
+                    padding: 0 20px;
+                    border: 1px solid #ddd;
+                    border-radius: 25px;
+                    font-size: 15px;
+                    outline: none;
+                    box-sizing: border-box;
+                "
+            >
+        </div>
+
+        <!-- BỘ LỌC -->
+        <div style="
+            text-align: center;
+            margin-bottom: 35px;
+        ">
+            <button
+                onclick="filterBrand('all')"
+                style="
+                    padding: 9px 20px;
+                    margin: 4px;
+                    border: none;
+                    border-radius: 20px;
+                    background: #111;
+                    color: white;
+                    cursor: pointer;
+                "
+            >
+                Tất cả
+            </button>
+
+            <button
+                onclick="filterBrand('Canon')"
+                style="
+                    padding: 9px 20px;
+                    margin: 4px;
+                    border: 1px solid #ddd;
+                    border-radius: 20px;
+                    background: white;
+                    cursor: pointer;
+                "
+            >
+                Canon
+            </button>
+
+            <button
+                onclick="filterBrand('Sony')"
+                style="
+                    padding: 9px 20px;
+                    margin: 4px;
+                    border: 1px solid #ddd;
+                    border-radius: 20px;
+                    background: white;
+                    cursor: pointer;
+                "
+            >
+                Sony
+            </button>
+
+            <button
+                onclick="filterBrand('Nikon')"
+                style="
+                    padding: 9px 20px;
+                    margin: 4px;
+                    border: 1px solid #ddd;
+                    border-radius: 20px;
+                    background: white;
+                    cursor: pointer;
+                "
+            >
+                Nikon
+            </button>
+
+            <button
+                onclick="filterBrand('Fujifilm')"
+                style="
+                    padding: 9px 20px;
+                    margin: 4px;
+                    border: 1px solid #ddd;
+                    border-radius: 20px;
+                    background: white;
+                    cursor: pointer;
+                "
+            >
+                Fujifilm
+            </button>
+        </div>
+
+        <!-- DANH SÁCH SẢN PHẨM -->
+        <div
+            id="productList"
+            style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            "
+        >
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Lưu danh sách sản phẩm
+        let products = [];
+        // Lấy dữ liệu từ file JSON
+        fetch("../data/products.json")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                products = data;
+                showProducts(products);
+            })
+            .catch(function(error) {
+                console.log("Lỗi tải dữ liệu:", error);
+                document.getElementById("productList").innerHTML = `
+                    <p style="
+                        text-align:center;
+                        width:100%;
+                        color:#777;
+                    ">
+                        Không thể tải dữ liệu sản phẩm.
+                    </p>
+                `;
+            });
+
+        // HIỂN THỊ SẢN PHẨM
+        function showProducts(list) {
+            let html = "";
+            // Không có sản phẩm
+            if (list.length === 0) {
+                html = `
+                    <div style="
+                        grid-column: 1 / -1;
+                        text-align: center;
+                        padding: 50px;
+                        color: #777;
+                    ">
+                        <h3>Không tìm thấy sản phẩm</h3>
+                        <p>
+                            Hãy thử tìm kiếm với từ khóa khác.
+                        </p>
+                    </div>
+                `;
+            }
+
+            // Tạo từng sản phẩm
+            for (let product of list) {
+                html += `
+                    <div style="
+                        background: white;
+                        border: 1px solid #e5e5e5;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        transition: 0.3s;
+                    ">
+                        <!-- ẢNH SẢN PHẨM -->
+                        <div style="
+                            width: 100%;
+                            height: 250px;
+                            background: #f5f5f5;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        ">
+                            <img
+                                src="${product.image}"
+                                alt="${product.name}"
+                                style="
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: contain;
+                                "
+                            >
+                        </div>
+
+                        <!-- THÔNG TIN -->
+                        <div style="
+                            padding: 20px;
+                        ">
+                            <p style="
+                                margin: 0 0 6px;
+                                color: #888;
+                                font-size: 14px;
+                            ">
+                                ${product.brand}
+                            </p>
+                            <h3 style="
+                                margin: 0 0 12px;
+                                font-size: 20px;
+                                color: #222;
+                            ">
+                                ${product.name}
+                            </h3> 
+                            <p style="
+                                margin: 0 0 18px;
+                                color: #d62828;
+                                font-size: 18px;
+                                font-weight: bold;
+                            ">
+                                ${Number(product.price).toLocaleString("vi-VN")} VNĐ
+                            </p>
+                            <a
+                                href="product-detail.html?id=${product.id}"
+                                style="
+                                    display: block;
+                                    text-align: center;
+                                    padding: 10px;
+                                    background: #111;
+                                    color: white;
+                                    text-decoration: none;
+                                    border-radius: 5px;
+                                "
+                            >
+                                Xem chi tiết
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Đưa sản phẩm lên trang
+            document.getElementById("productList").innerHTML = html;
+        }
+
+        // LỌC THEO HÃNG
+        function filterBrand(brand) {
+            if (brand === "all") {
+                showProducts(products);
+                return;
+            }
+            let result = products.filter(function(product) {
+                return product.brand.toLowerCase() === brand.toLowerCase();
+            });
+            showProducts(result);
+        }
+
+        // TÌM KIẾM SẢN PHẨM
+        document
+            .getElementById("search")
+            .addEventListener("input", function() {
+                let keyword = this.value.toLowerCase();
+                let result = products.filter(function(product) {
+                    return (
+                        product.name.toLowerCase().includes(keyword)
+                        ||
+                        product.brand.toLowerCase().includes(keyword)
+                    );
+                });
+                showProducts(result);
+            });
+    </script>
+</main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/include.js"></script>
+</body>
+</html>

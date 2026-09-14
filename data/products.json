@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Canon EOS R50",
+        "brand": "Canon",
+        "price": 18990000,
+        "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_2__10_149.png"
+    },
+    {
+        "id": 2,
+        "name": "Canon EOS R10",
+        "brand": "Canon",
+        "price": 24990000,
+        "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"
+    },
+    {
+        "id": 3,
+        "name": "Sony Alpha A6400",
+        "brand": "Sony",
+        "price": 16990000,
+        "image": "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?w=500"
+    },
+    {
+        "id": 4,
+        "name": "Sony Alpha A7 III",
+        "brand": "Sony",
+        "price": 32990000,
+        "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500"
+    },
+    {
+        "id": 5,
+        "name": "Nikon Z50",
+        "brand": "Nikon",
+        "price": 21990000,
+        "image": "https://m.media-amazon.com/images/I/81HIkTRzXsL._AC_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Fujifilm X-T5",
+        "brand": "Fujifilm",
+        "price": 36990000,
+        "image": "https://images.unsplash.com/photo-1516724562728-afc824a36e84?w=500"
+    }
+]
