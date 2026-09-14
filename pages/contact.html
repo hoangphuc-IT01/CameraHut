@@ -1,0 +1,110 @@
+<main>
+    <div class="container my-5">
+        
+        <!-- PHẦN 1: ẢNH CỬA HÀNG & THÔNG TIN LIÊN HỆ -->
+        <div class="row mb-5">
+            <div class="col-md-7 mb-3 mb-md-0">
+                <!-- phần này gắn link ảnh -->
+                <img src="" class="img-fluid rounded shadow-sm" alt="Cửa hàng Camera">
+            </div>
+            <div class="col-md-5">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h4 class="card-title font-weight-bold mb-4">LIÊN HỆ</h4>
+                        <p class="font-weight-bold mb-2">Địa chỉ:</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">• Cơ sở chính: 12 Chùa Bộc,P. Kim Liên, Hà Nội.</li>
+                            <!--có thêm chinh nhánh nào nữa k nhỉ-->
+                        </ul>
+                        <p class="mb-2"><span class="font-weight-bold">Hotline:</span> <span class="text-danger">0123.456.789</span></p>
+                        <p><span class="font-weight-bold">Email:</span> lienhe@camerahut.com.vn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN 2: DANH SÁCH CHI NHÁNH (nếu cần thêm thì t sẽ sửa lại nhé) & BẢN ĐỒ  -->
+        <div class="row mb-5 border rounded p-3 bg-white shadow-sm">
+            <div class="col-md-4 overflow-auto" style="max-height: 400px;">
+                <!-- Chi nhánh 1 -->
+                <div class="mb-4 pl-3" style="border-left: 4px solid #115f23;">
+                    <h6 class="text-success font-weight-bold">CameHut Chùa Bộc (HN)</h6>
+                    <p class="small text-muted mb-1">12 Chùa Bộc, P. Kim Liên, Tp. Hà Nội.</p>
+                    <p class="text-danger small font-weight-bold mb-0">📞 0123456789</p>
+                </div> 
+            </div>
+            
+            <div class="col-md-8">
+                <!-- Mã nhúng bản đồ Google Maps -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6203769615922!2d105.82535447482108!3d21.007849180636253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIEtpbSBMacOqbiwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1789303366627!5m2!1sen!2s" 
+                    width="100%" height="400" style="border:1; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div> 
+        <!---->
+
+        <!-- PHẦN 3: FORM ĐĂNG KÝ   -->
+        <div class="p-4 rounded text-white" style="background-color: #388e3c;">
+            <div class="p-4 p-md-5 rounded-lg text-white shadow" style="background-color: #388e3c;">
+                <div class="row align-items-center">
+                
+                <!-- Cột văn bản bên trái -->
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <h3 class="font-weight-bold mb-3">Đăng kí nhận thông báo</h3>
+                    <p class="mb-0 text-light" style="font-size: 1.05rem; line-height: 1.6;">
+                        Đăng kí để nhận các thông báo về khuyến mãi. Các bản cập nhật phần mềm cho sản phẩm và các thông tin hữu ích liên quan đến sản phẩm từ CAMERAHUT.
+                    </p>
+                </div>
+
+                <!-- Cột Form nhập liệu bên phải -->
+                <div class="col-lg-5">
+                    <form id="subscribeForm">
+                        <div class="form-group mb-2">
+                            <!-- Ô nhập Email -->
+                            <input type="text" id="emailInput" class="form-control border-0 px-3" 
+                                   placeholder="Nhập Email của bạn ..." 
+                                   style="height: 50px; font-size: 1rem; border-radius: 8px;">
+                        </div>
+
+                        <!-- Dòng thông báo lỗi nếu nhập sai -->
+                       <small id="emailError" class="text-warning font-weight-bold d-none mb-2">
+                            ⚠️ Vui lòng nhập đúng định dạng email (VD: abc@gmail.com)!
+                        </small>
+
+                        <button type="submit" class="btn btn-dark btn-block font-weight-bold text-uppercase mt-2" 
+                                style="height: 50px; border-radius: 8px; font-size: 1.1rem; letter-spacing: 1px;">
+                            GỬI
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT  -->
+    <script>
+        document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Chặn hành động tải lại trang web
+            
+            const emailValue = document.getElementById('emailInput').value.trim();
+            const errorText = document.getElementById('emailError');
+            
+            // kiểm tra định dạng email chuẩn
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (emailValue === "") {
+                // Lỗi để trống
+                errorText.innerText = "⚠️ Bạn chưa nhập Email!";
+                errorText.classList.remove('d-none');
+            } else if (!emailRegex.test(emailValue)) {
+                // Lỗi sai định dạng
+                errorText.innerText = "⚠️ Vui lòng nhập đúng định dạng email (VD: abc@gmail.com)!";
+                errorText.classList.remove('d-none');
+            } else {
+                // Nhập đúng -> Ẩn chữ lỗi, báo thành công và xóa trắng ô
+                errorText.classList.add('d-none');
+                alert("🎉 Đăng ký thành công! Cảm ơn bạn.");
+                this.reset();
+            }
+        });
+    </script>
+</main>
