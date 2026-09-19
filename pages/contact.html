@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - CameraHut</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main class="contact-container">
+        <div class="contact-header">
+            <nav class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Liên hệ</span>
+            </nav>
+        <h1>Liên hệ với chúng tôi</h1>
+        <p class="sla-notice">Chúng tôi trả lời trong vòng <strong>2 giờ làm việc</strong>. Cần gấp? Gọi hotline <a href="tel: 1900 6868">1900 6868</a> hoặc nhắn Zalo <a href="#">0901 234 567</a>  
+        </p>
+        </div>
+        <!-- bố cục 2 cột -->
+         <div class="contact-grid">
+            <!-- cột trái thông tin showroom HN -->
+             <div class="contact-info-column">
+                <div class="card info-card">
+                    <span class="card-subtitle">Thông tin chung</span>
+                    <h2>Đầu mối liên hệ</h2>
+                    <ul class="info-list">
+                        <li>
+                            <span class="label">HOTLINE</span>
+                            <span class="value"><a href="tel: 1900 6868">1900 6868</a>- 8h30 - 21h30 hàng ngày</span>
+                        </li>
+                        <li>
+                            <span class="label">BÁN DOANH NGHIỆP</span>
+                            <span class="value"><a href="tel: 1900 6868">1900 6868</a></span>
+                        </li>
+                        <li>
+                            <span class="label">EMAIL</span>
+                            <span class="value"><a href="mailto:support@camerahut.vn">support@camerahut.vn</a></span>
+                        </li>
+                        <li>
+                            <span class="label">BẢO HÀNH</span>
+                            <span class="value"><a href="mailto:warranty@camerahut.vn">warranty@camerahut.vn</a></span>
+                        </li>
+                        <li>
+                            <span class="label">HỢP TÁC</span>
+                            <span class="value"><a href="mailto:partner@camerahut.vn">partner@camerahut.vn</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- showroom Hà Nội -->
+                <div class="card showroom-card">
+                    <span class="card-subtitle">SHOWROOM</span>
+                    <h3>TP. Hà Nội</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span class="label">ĐỊA CHỈ</span>
+                            <span class="value">Số 12, phố Chùa Bộc, phường Kim Liên, TP. Hà Nội</span>
+                        </li>
+                        <li>
+                            <span class="label">GIỜ MỞ CỬA</span>
+                            <span class="value">Thứ 2 - Chủ nhật · 8h30 - 21h30</span>
+                        </li>
+                        <li><span class="label">ĐIỆN THOẠI</span>
+                            <span class="value">1900 6868 / 0901 234 567 </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card showroom-card">
+                    <span class="card-subtitle">MẠNG XÃ HỘI</span>
+                    <h3>Chat nhanh - phản hồi 5 phút</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span class="label">ZALO OA</span>
+                            <span class="value">1900 6868</span>
+                        </li>
+                        <li>
+                            <span class="label">MESSAGE</span>
+                            <span class="value">m.me/camrahutvn</span>
+                        </li>
+                        <li><span class="label">HOTLINE</span>
+                            <span class="value">1900 6868</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- google map -->
+                <div class="card map-card">
+                    <span class="card-subtilte">Bản đồ</span>
+                    <h3>Vị trí cửa hàng</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620376478196!2d105.8279294!3d21.007849199999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIEtpbSBMacOqbiwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1789808773321!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                    </div>
+                </div>
+             </div>
+                <!-- cột phải form tư vấn -->
+                 <div class="contact-form-conlum">
+                    <div class="card form-card">
+                        <span class="card-subtitile">GỬI YÊU CẦU</span>
+                        <h2>Để chúng tôi liên hệ với bạn</h2>
+                        <p class="form-desc">
+                            Mô tả ngắn nhu cầu của bạn — đội tư vấn sẽ liên hệ trong vòng 2 giờ làm việc. Form này không dùng cho khiếu nại bảo hành (vui lòng email warranty@camerahut.vn).
+                        </p>
+                        <form id="contactForm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Yêu cầu đã được gửi.');">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullname">Họ và tên *</label>
+                                    <input type="text" id="fullname" placeholder="Nguyễn Văn A" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Số điện thoại *</label>
+                                    <input type="tel" id="phone" placeholder="0869 xxx xxx" required>
+                                </div>   
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="email@cuaban.vn">
+                                </div>  
+                                <div class="form-group">
+                                    <label for="subject">Chủ đề *</label>
+                                    <select id="subject" required>
+                                        <option value="">-Chọn chủ đề-</option>
+                                        <option value="buy">Tư vấn mua máy ảnh</option>
+                                        <option value="tradein">Thu cũ đổi mới (Trade-in)</option>
+                                        <option value="rent">Thủ tục thuê thiết bị</option>
+                                    </select>
+                                </div>  
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="budget">Ngân sách dự kiến</label>
+                                    <select id="budget">
+                                        <option value="">-Chưa rõ</option>
+                                        <option value=low"">Dưới 15 triệu</option>
+                                        <option value="mid">15-35 triệu</option>
+                                        <option value="high">trên 35 triệu</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferred">Cách liên hệ ưa thích</label>
+                                    <select id="preferred">
+                                        <option value="call">Gọi điện</option>
+                                        <option value="zalo">Liên hệ qua Zalo</option>
+                                        <option value="email">Email</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mô tả nhu cầu *</label>
+                                <textarea id="message" rows="4" placeholder="Ví dụ: Mình cần combo máy ảnh + lens chân dung để chụp ảnh gia đình vào cuối tuần, ngân sách khoảng 25 triệu" required></textarea>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="consent" required>
+                                <label for="consent">Tôi đồng ý cho CameraHut liên hệ về yêu cầu này. Thông tin chỉ dùng để tư vấn, không chia sẻ cho bên thứ ba.</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">Gửi yêu cầu</button>
+                                <span class="response-time">Phản hồi trong 2 giờ làm việc</span>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+             </div>
+             <!-- mục câu hỏi thường gặp FAQ -->
+              <section class="faq-sectionn">
+                <h2>Câu hỏi thường gặp</h2>
+                <p class="faq-sub">Không thấy câu trả lời? Gửi câu hỏi qua form ở trên hoặc hotline 1900 6868 </p>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Tôi có thể đặt giữ máy trước rồi đến showroom xem thử nghiệm thực tế không?</summary>
+                        <p>Hoàn toàn được. Bạn chỉ cần đặt cọc 1.000.000đ thông qua hình thức chuyển khoản hoặc thanh toán thẻ. Thiết bị sẽ được CameraHut giữ cẩn thận trong 48 giờ tại showroom mà bạn chọn. Nếu sau khi trải nghiệm thực tế, bạn quyết định không mua, CameraHut cam kết hoàn trả 100% tiền cọc ngay trong ngày, không cần lý do.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>CameraHut có hỗ trợ mua trả góp 0% lãi suất không? Thủ tục thế nào?</summary>
+                        <p>CameraHut liên kết trả góp 0% qua thẻ tín dụng hoặc CCCD với thời gian xét duyệt siêu tốc trong khoảng 15 phút.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>CameraHut có chính sách thu cũ đổi mới (Trade-in) không?</summary>
+                        <p>Có. Bạn gửi số seri và ảnh thực tế qua Zalo OA để nhận định giá sơ bộ trong 30 phút trước khi mang máy tới kiểm định tại cửa hàng.</p>
+                    </details>
+                </div>
+            </section>
+</main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/include.js"></script>
+</body>
