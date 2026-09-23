@@ -16,7 +16,12 @@
     margin-bottom: 30px;
 }
 
-.sla-notice a {
+/* .sla-notice a {
+    color: #c84b26;
+    font-weight: bold;
+    text-decoration: none;
+} */
+ a {
     color: #c84b26;
     font-weight: bold;
     text-decoration: none;
