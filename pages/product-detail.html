@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Camera Hut</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <main class="page-container">
+        <!-- ĐIỀU HƯỚNG BREADCRUMB -->
+        <nav class="breadcrumb">
+            <a href="products.html">Trang chủ</a> <span>&gt;</span>
+            <span id="bcCategory">Danh mục</span> <span>&gt;</span>
+            <strong id="bcName">Đang tải...</strong>
+        </nav>
+
+        <!-- KHỐI CHÍNH: ẢNH VÀ ĐẶT HÀNG -->
+        <section class="main-product-layout" id="mainProductView">
+            <div class="loading-state">Đang tải thông tin sản phẩm...</div>
+        </section>
+
+        <!-- KHỐI 1: PHỤ KIỆN KHUYÊN DÙNG (CÙNG HÃNG) -->
+        <section class="sub-block-card">
+            <h2 class="sub-block-title" id="accessoriesTitle">Phụ kiện khuyên dùng</h2>
+            <div class="product-slider-grid" id="accessoriesList"></div>
+        </section>
+
+        <!-- KHỐI 2: TAB MÔ TẢ & ĐÁNH GIÁ -->
+        <section class="sub-block-card">
+            <div class="tab-header-wrap">
+                <button class="tab-btn-item active" onclick="switchDetailTab('desc', this)">Mô tả sản phẩm</button>
+                <button class="tab-btn-item" onclick="switchDetailTab('review', this)">Đánh giá & Bình luận</button>
+            </div>
+            <div class="tab-body-container" id="tabContentBox"></div>
+        </section>
+
+        <!-- KHỐI 3: SẢN PHẨM TƯƠNG TỰ (CHỈ CÙNG HÃNG) -->
+        <section class="sub-block-card">
+            <h2 class="sub-block-title text-center" id="relatedTitle">SẢN PHẨM CÙNG THƯƠNG HIỆU</h2>
+            <div class="product-slider-grid" id="relatedList"></div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/product-detail.js"></script>
+    <script src="../js/include.js"></script>
+</body>
+</html>

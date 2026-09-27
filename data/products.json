@@ -3,42 +3,152 @@
         "id": 1,
         "name": "Canon EOS R50",
         "brand": "Canon",
-        "price": 18990000,
-        "image": "https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_2__10_149.png"
+        "category": "Mirrorless",
+        "price": 16490000,
+        "image": "../pages/image/R50.webp",
+        "images": [
+            "../pages/image/R50.webp",
+            "../pages/image/R50.1.webp",
+            "../pages/image/R50.2.webp",
+            "../pages/image/R50.3.webp"
+        ]
     },
     {
         "id": 2,
-        "name": "Canon EOS R10",
-        "brand": "Canon",
-        "price": 24990000,
-        "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"
+        "name": "Sony Alpha A6400",
+        "brand": "Sony",
+        "category": "Mirrorless",
+        "price": 18390000,
+        "image": "../pages/image/A6400.webp"
     },
     {
         "id": 3,
-        "name": "Sony Alpha A6400",
-        "brand": "Sony",
-        "price": 16990000,
-        "image": "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?w=500"
+        "name": "Fujifilm X-T5",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 32990000,
+        "image": "../pages/image/XT5.webp"
     },
     {
         "id": 4,
-        "name": "Sony Alpha A7 III",
+        "name": "Sony Alpha A6000",
         "brand": "Sony",
-        "price": 32990000,
-        "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500"
+        "category": "Mirrorless",
+        "price": 7990000,
+        "image": "../pages/image/A6000.webp"
     },
     {
         "id": 5,
-        "name": "Nikon Z50",
-        "brand": "Nikon",
-        "price": 21990000,
-        "image": "https://m.media-amazon.com/images/I/81HIkTRzXsL._AC_.jpg"
+        "name": "Canon EOS M10 + Kit 15-45mm",
+        "brand": "Canon",
+        "category": "Mirrorless",
+        "price": 7900000,
+        "image": "https://tse3.mm.bing.net/th/id/OIP.KzRfp8ftk4WirCjUBND3HwHaHa?r=0&pid=Api&h=220&P=0"
     },
     {
         "id": 6,
-        "name": "Fujifilm X-T5",
+        "name": "Fujifilm X-A10",
         "brand": "Fujifilm",
-        "price": 36990000,
-        "image": "https://images.unsplash.com/photo-1516724562728-afc824a36e84?w=500"
+        "category": "Mirrorless",
+        "price": 7990000,
+        "image": "https://pxlmag.com/db/images/cameras/gallery/fullsize/Fujifilm-X-A10/Fujifilm-X-A10-front.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Canon EOS 4000D",
+        "brand": "Canon",
+        "category": "DSLR",
+        "price": 6990000,
+        "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 8,
+        "name": "Nikon D3500",
+        "brand": "Nikon",
+        "category": "DSLR",
+        "price": 8990000,
+        "image": "https://tse3.mm.bing.net/th/id/OIP.Ya2QsnIepQ0IrvmWXJdSoQHaG3?r=0&pid=Api&h=220&P=0"
+    },
+    {
+        "id": 9,
+        "name": "Nikon D7500",
+        "brand": "Nikon",
+        "category": "DSLR",
+        "price": 21990000,
+        "image": "https://photographylife.com/wp-content/uploads/2017/04/Nikon-D7500-DSLR.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Canon EOS 90D",
+        "brand": "Canon",
+        "category": "DSLR",
+        "price": 24990000,
+        "image": "https://tse4.mm.bing.net/th/id/OIP.Mg5BYuYjmlHHH-EBtBoEEQHaHa?r=0&pid=Api&h=220&P=0"
+    },
+
+    {
+        "id": 11,
+        "name": "DJI Osmo Pocket 3",
+        "brand": "DJI",
+        "category": "Compact",
+        "price": 13990000,
+        "image": "https://tse4.mm.bing.net/th/id/OIP.m8uojyGg1BjhJe21Y6AERAHaHa?r=0&pid=Api&h=220&P=0"
+    },
+    {
+        "id": 12,
+        "name": "DJI Osmo Pocket 4",
+        "brand": "DJI",
+        "category": "Compact",
+        "price": 15990000,
+        "image": "https://videolane.com/wp-content/uploads/Imagined-Osmo-Pocket-4-Gemini.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Sony ZV-1",
+        "brand": "Sony",
+        "category": "Compact",
+        "price": 14990000,
+        "image": "https://pxlmag.com/db/images/cameras/gallery/fullsize/Sony-ZV-1/Sony-ZV-1-front.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Canon PowerShot SX620 HS",
+        "brand": "Canon",
+        "category": "Compact",
+        "price": 6500000,
+        "image": "https://tse2.mm.bing.net/th/id/OIP.gBtKmGF9GzdmdBlKI35qpgHaHa?r=0&pid=Api&h=220&P=0"
+    },
+
+    {
+        "id": 15,
+        "name": "Canon RF 50mm F1.8",
+        "brand": "Canon",
+        "category": "Lens",
+        "price": 5490000,
+        "image": "https://radojuva.com/wp-content/uploads/2020/11/canon-rf-lens-50mm-f-1-8-stm-new-2020-5.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Sony FE 50mm F1.8",
+        "brand": "Sony",
+        "category": "Lens",
+        "price": 5990000,
+        "image": "https://tse1.mm.bing.net/th/id/OIP.asz0yW18Fb_LjYwaYf0KLQHaHa?r=0&pid=Api&h=220&P=0"
+    },
+    {
+        "id": 17,
+        "name": "Canon EF 50mm F1.8 STM",
+        "brand": "Canon",
+        "category": "Lens",
+        "price": 2500000,
+        "image": "https://www.ephotozine.com/articles/canon-ef-50mm-f-1-8-stm-lens-review-27666/images/highres-Canon-EF-50mm-f1-8-STM-5_1433862749.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Sony 16-50mm F3.5-5.6 OSS",
+        "brand": "Sony",
+        "category": "Lens",
+        "price": 3990000,
+        "image": "https://www.ephotozine.com/articles/sony-e-16-50mm-f-3-5-5-6-oss-lens-review-20667/images/highres-sony-16-50mm-oss-lens_1352811627.jpg"
     }
 ]
