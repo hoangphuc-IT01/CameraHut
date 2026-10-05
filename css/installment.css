@@ -1,0 +1,178 @@
+.payment-page-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.payment-section {
+    margin-bottom: 30px;
+}
+
+.payment-section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.payment-section ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.payment-section li {
+    margin-bottom: 8px;
+}
+
+.bank-card {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.highlight-acc {
+    font-family: monospace;
+    font-weight: bold;
+    color: #2563eb;
+    font-size: 18px;
+}
+
+mark {
+    background-color: #fef08a;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.note-box {
+    background-color: #fff;
+    border-left: 4px solid #f59e0b;
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+/* Công cụ tính trả góp */
+.calculator-box {
+    background-color: #f38d1165;
+    border: 1px solid #f49b0d86;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.calculator-box h3 {
+    margin-top: 0;
+    color: #0369a1;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .calculator-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.term-btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.term-btn {
+    flex: 1;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.term-btn.active {
+    background-color: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.calc-results {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.calc-results h4 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.result-row.total {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.highlight-price {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.calc-disclaimer {
+    font-size: 12px;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.contact-info-card {
+    background-color: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
