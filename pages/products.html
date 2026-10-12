@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Camera Hut</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/products.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div id="header-placeholder"></div>
+
+    <!-- NỘI DUNG TRANG -->
+    <main>
+        <!-- TIÊU ĐỀ -->
+        <section style="
+            text-align:center;
+            padding:55px 20px 25px;
+        ">
+            <h1 style="
+                font-size:38px;
+                margin-bottom:10px;
+            ">
+                Sản phẩm
+            </h1>
+
+            <p style="
+                color:#666;
+                font-size:17px;
+            ">
+                Khám phá các dòng máy ảnh tại Camera Hut
+            </p>
+
+        </section>
+
+        <!-- TÌM KIẾM + BỘ LỌC -->
+        <section style="
+            max-width:1200px;
+            margin:auto;
+            padding:10px 25px 50px;
+        ">
+
+            <!-- Ô TÌM KIẾM -->
+            <div style="
+                max-width:550px;
+                margin:0 auto 25px;
+            ">
+                <input
+                    type="text"
+                    id="search"
+                    class="product-search"
+                    placeholder="Tìm kiếm máy ảnh..."
+                >
+            </div>
+
+            <!-- LOGO CÁC HÃNG -->
+            <div class="brand-list">
+                <!-- Tất cả -->
+                <button
+                    class="brand-logo active"
+                    onclick="filterBrand('all')"
+                >
+                    <span>Tất cả</span>
+                </button>
+
+                <!-- Canon -->
+                <button
+                    class="brand-logo"
+                    onclick="filterBrand('Canon')"
+                >
+                    <img
+                        src="https://1000logos.net/wp-content/uploads/2016/10/canon-symbol.jpg"
+                        alt="Canon"
+                    >
+                </button>
+
+                <!-- Sony -->
+                <button
+                    class="brand-logo"
+                    onclick="filterBrand('Sony')"
+                >
+                    <img
+                        src="https://logos-download.com/wp-content/uploads/2016/02/Sony-Logo.jpg"
+                        alt="Sony"
+                    >
+                </button>
+
+                <!-- Fujifilm -->
+                <button
+                    class="brand-logo"
+                    onclick="filterBrand('Fujifilm')"
+                >
+                    <img
+                        src="https://tse4.mm.bing.net/th/id/OIP.1GbytOMgjB-_HsgV31Xt_AHaBt?r=0&pid=Api&h=220&P=0"
+                        alt="Fujifilm"
+                    >
+                </button>
+
+                <!-- Nikon -->
+                <button
+                    class="brand-logo"
+                    onclick="filterBrand('Nikon')"
+                >
+                    <img
+                        src="https://www.pngkey.com/png/full/142-1423045_nikon-logo-png.png"
+                        alt="Nikon"
+                    >
+                </button>
+
+                <!-- DJI -->
+                <button
+                    class="brand-logo"
+                    onclick="filterBrand('DJI')"
+                >
+                    <img
+                        src="https://tse4.mm.bing.net/th/id/OIP.Bvn8IUq6NoZIt7ypnQa-4QHaEX?r=0&pid=Api&h=220&P=0"
+                        alt="DJI"
+                    >
+                </button>
+
+            </div>
+
+            <!-- DANH SÁCH SẢN PHẨM -->
+            <div
+                id="productList"
+                class="product-list"
+            >
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/products.js"></script>
+    <script src="../js/include.js"></script>
+</body>
+</html>
