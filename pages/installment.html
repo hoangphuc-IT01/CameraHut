@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính sách thanh toán & Trả góp</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/installment.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main class="payment-page-container">
+        <div class="installment-header">
+            <nav class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Tính trả góp</span>
+            </nav>
+        <h1 class="page-tiltle">Chính sách thanh toán</h1>
+        <p class="intro-text">Nhằm mang đến trải nghiệm mua sắm thiết bị máy ảnh và phụ kiện thuận tiện nhất, <strong>CameraHut</strong> cung cấp đa dạng các phương thức thanh toán an toàn, minh bạch cho khách hàng khi giao dịch tại website 
+            <a href="#">camerahut.vn</a>. Khách hàng có thể lựa chọn một trong các phương thức thanh toán dưới đây:
+        </p>
+        <!-- 1. Thanh toán cod -->
+        <section class="payment-section">
+            <h2>1. Thanh toán tiền mặt khi nhận hàng (COD - Cash on delivery)</h2>
+        <p>Đây là phương thức thanh toán đơn giản và an toàn nhất dành cho khách hàng.</p>
+        <ul>
+            <li><strong>Quy trình: </strong>Khách hàng tiến hành đặt hàng trên website. Hệ thống ghi nhận đơn hàng và bộ phận chăm sóc khách hàng sẽ liên hệ xác nhận. Đơn vị vận chuyển sẽ giao hàng đến tận địa chỉ do khách hàng cung cấp.</li>
+            <li><strong>Thanh toán: </strong>Khách hàng được quyền kiểm tra tình trạng ngoại quan của bưu kiện (theo Chính sách kiểm hàng). Sau khi xác nhận bưu kiện nguyên vẹn, khách hàng thanh toán toàn bộ giá trị đơn hàng bằng tiền mặt trực tiếp cho nhân viên giao nhận.</li>
+        </ul>
+    </section>
+        <!-- 2.Chuyển khoản -->
+    <section class="payment-section">
+        <h2>2. Thanh toán bằng hình thức chuyển khoản ngân hàng</h2>
+        <p>Áp dụng cho khách hàng có nhu cầu chuyển khoản trước hoặc các đơn hàng có giá trị lớn. Sau khi đặt hàng thành công, khách hàng vui lòng chuyển khoản tổng giá trị đơn hàng vào tài khoản ngân hàng doanh nghiệp của CameraHut theo thông tin dưới đây:</p>
+        <div class="bank-card">
+            <p><strong>Tên tài khoản: </strong>CameraHut</p>
+            <p><strong>Số tài khoản: </strong><span class="hightlight-acc">8883868386</span></p>
+            <p><strong>Ngân hàng: </strong>Ngân hàng Vietcombank - CN HN</p>
+            <p><strong>Cú pháp chuyển khoản: </strong><mark>[Mã đơn hàng]-[Số điện thoại đặt hàng]</mark></p>
+        </div>
+        <div class="note-box">
+            <p class="note-title">Lưu ý: </p>
+            <ul>
+                <li>Ngay sau khi nhận được thông báo biến động số dư từ ngân hàng, bộ phận xử lý đơn hàng của chúng tôi sẽ lập tức liên hệ xác nhận và tiến hành xuất kho giao hàng.</li>
+                <li>Nếu sau 24 giờ kể từ khi đặt hàng (không tính ngày Lễ, Tết, Chủ nhật) mà khách hàng chưa thực hiện chuyển khoản, đơn hàng sẽ tự động bị hủy trên hệ thống.</li>
+            </ul>
+        </div>
+    </section>
+        <!-- 3.Trả góp qua thẻ -->
+     <section class="payment-section">
+            <h2>3. Thanh toán trả góp qua thẻ tín dụng</h2>
+            <p>Để tạo điều kiện thuận lợi cho khách hàng sở hữu sản phẩm mong muốn, <strong>CameraHut hỗ trợ hình thức trả góp linh hoạt qua mPOS.</strong></p>
+            
+            <p class="sub-title">Cách thức thực hiện:</p>
+            <ul>
+                <li>Nhân viên sẽ hỗ trợ tính toán dựa trên loại thẻ, số tiền cần trả góp và thời hạn mong muốn.</li>
+                <li>Hệ thống sẽ đưa ra mức phí cụ thể cho từng kỳ hạn.</li>
+                <li>Khách hàng có thể lựa chọn thanh toán bằng cách quét thẻ trực tiếp hoặc qua đường dẫn online do nhân viên cung cấp.</li>
+            </ul>
+        <!-- Công cụ tính trả góp -->
+     <div class="calculator-box">
+                <h3>🧮 Công cụ dự tính Trả góp qua mPOS</h3>
+                
+                <div class="calculator-grid">
+                    <!-- Khối nhập liệu -->
+                    <div class="calc-inputs">
+                        <div class="form-group">
+                            <label for="productPrice">Giá trị sản phẩm (VNĐ):</label>
+                            <input type="number" id="productPrice" value="25000000" step="500000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prepaidPercent">Tỷ lệ trả trước (%):</label>
+                            <select id="prepaidPercent">
+                                <option value="0">0% (Trả góp 100%)</option>
+                                <option value="20">20%</option>
+                                <option value="30" selected>30%</option>
+                                <option value="50">50%</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kỳ hạn trả góp:</label>
+                            <div class="term-btn-group">
+                                <button type="button" class="term-btn" data-term="3">3 tháng</button>
+                                <button type="button" class="term-btn active" data-term="6">6 tháng</button>
+                                <button type="button" class="term-btn" data-term="9">9 tháng</button>
+                                <button type="button" class="term-btn" data-term="12">12 tháng</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Khối kết quả -->
+                    <div class="calc-results">
+                        <h4>Bảng ước tính chi phí</h4>
+                        <div class="result-row">
+                            <span>Số tiền trả trước:</span>
+                            <strong id="resPrepaid">0 đ</strong>
+                        </div>
+                        <div class="result-row">
+                            <span>Số tiền cần trả góp:</span>
+                            <strong id="resLoan">0 đ</strong>
+                        </div>
+                        <div class="result-row">
+                            <span>Phí mPOS (ước tính):</span>
+                            <strong id="resFee">0 đ</strong>
+                        </div>
+                        <hr>
+                        <div class="result-row total">
+                            <span>Gốc + Phí mỗi tháng:</span>
+                            <strong id="resMonthly" class="highlight-price">0 đ</strong>
+                        </div>
+                        <p class="calc-disclaimer">* Mức phí mang tính chất tham khảo. Phí thực tế tùy thuộc vào Ngân hàng tại thời điểm quẹt thẻ.</p>
+                    </div>
+                </div>
+            </div>
+        <p class="sub-title">Các ngân hàng liên kết trả góp với mPOS: </p>
+        <p>Hiện nay, mPOS tại CameraHut hỗ trợ trả góp qua nhiều ngân hàng lớn (Techcombank, Vietcombank, VPBank, Sacombank, HSBC, Citibank, MBBank, VIB, TPBank, Shinhan Bank...), mang đến sự linh hoạt cho quý khách.</p>
+    </section>
+        <!-- 4. Quy định giá & hóa đơn -->
+        <section class="payment-section">
+            <h2>4. Quy định về giá và hóa đơn</h2>
+            <ul>
+                <li>Tất cả giá niêm yết của các sản phẩm máy ảnh, ống kính và phụ kiện trên website <code>camerahut.vn</code> đều được tính bằng Việt Nam Đồng (VNĐ) và <strong>đã bao gồm thuế Giá trị gia tăng (VAT)</strong> theo quy định.</li>
+                <li>Giá niêm yết chưa bao gồm chi phí đóng gói và vận chuyển. Phí vận chuyển (nếu có) sẽ được hiển thị rõ tại bước thanh toán.</li>
+                <li>Khách hàng có nhu cầu xuất hóa đơn điện tử VAT vui lòng điền đầy đủ thông tin doanh nghiệp tại bước thanh toán hoặc liên hệ với bộ phận CSKH trong vòng 24h kể từ khi nhận hàng thành công.</li>
+            </ul>
+        </section>
+
+        <!-- 5. Cam kết bảo mật -->
+        <section class="payment-section border-top">
+            <h2>5. Cam kết bảo mật thanh toán</h2>
+            <p>CameraHut cam kết tuân thủ nghiêm ngặt các quy định của pháp luật Việt Nam và Bộ Công Thương về bảo mật thông tin thanh toán của người tiêu dùng.</p>
+
+            <div class="contact-info-card">
+                <p><strong>Thông tin liên hệ hỗ trợ thanh toán:</strong></p>
+                <ul>
+                    <li><strong>Đơn vị quản lý: </strong>CameraHut</li>
+                    <li><strong>Địa chỉ trụ sở: </strong> Số 12, phố Chùa Bộc, phường Kim Liên, TP. Hà Nội</li>
+                    <li><strong>Hotline CSKH: </strong><a href="tel:19006868">1900 6868</a></li>
+                    <li><strong>Email: </strong><a href="mailto:support@camerahut.vn">support@camerahut.vn</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/include.js"></script>
+    <script src="../js/installment.js"></script>
+</body>
+</html>
