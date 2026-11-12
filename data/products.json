@@ -19,7 +19,13 @@
         "brand": "Sony",
         "category": "Mirrorless",
         "price": 18390000,
-        "image": "../pages/image/A6400.webp"
+        "image": "../pages/image/A6400.webp",
+        "images":[
+            "../pages/image/A6400.webp",
+            "../pages/image/A6400.1.webp",
+            "../pages/image/A6400.2.webp",
+            "../pages/image/A6400.3.webp"
+        ]
     },
     {
         "id": 3,
@@ -27,7 +33,15 @@
         "brand": "Fujifilm",
         "category": "Mirrorless",
         "price": 32990000,
-        "image": "../pages/image/XT5.webp"
+        "image": "../pages/image/XT5.webp",
+        "images":[
+            "../pages/image/XT5.webp",
+            "../pages/image/XT5.1.webp",
+            "../pages/image/XT5.2.webp",
+            "../pages/image/XT5.3.webp",
+            "../pages/image/XT5.4.webp"
+        ]
+
     },
     {
         "id": 4,
@@ -35,7 +49,13 @@
         "brand": "Sony",
         "category": "Mirrorless",
         "price": 7990000,
-        "image": "../pages/image/A6000.webp"
+        "image": "../pages/image/A6000.webp",
+        "images":[
+            "../pages/image/A6000.webp",
+            "../pages/image/A6000.1.webp",
+            "../pages/image/A6000.2.webp",
+            "../pages/image/A6000.3.webp"
+        ]
     },
     {
         "id": 5,
@@ -43,7 +63,13 @@
         "brand": "Canon",
         "category": "Mirrorless",
         "price": 7900000,
-        "image": "https://tse3.mm.bing.net/th/id/OIP.KzRfp8ftk4WirCjUBND3HwHaHa?r=0&pid=Api&h=220&P=0"
+        "image": "../pages/image/M10.webp",
+        "images":[
+            "../pages/image/M10.webp",
+            "../pages/image/M10.1.webp",
+            "../pages/image/M10.2.webp",
+            "../pages/image/M10.3.webp"
+        ]
     },
     {
         "id": 6,
@@ -51,7 +77,12 @@
         "brand": "Fujifilm",
         "category": "Mirrorless",
         "price": 7990000,
-        "image": "https://pxlmag.com/db/images/cameras/gallery/fullsize/Fujifilm-X-A10/Fujifilm-X-A10-front.jpg"
+        "image": "../pages/image/XA10.webp",
+        "images":[
+            "../pages/image/XA10.webp",
+            "../pages/image/XA10.1.webp",
+            "../pages/image/XA10.2.webp"
+        ]
     },
     {
         "id": 7,
@@ -59,7 +90,13 @@
         "brand": "Canon",
         "category": "DSLR",
         "price": 6990000,
-        "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=800&q=80"
+       "image": "../pages/image/4000D.webp",
+        "images":[
+            "../pages/image/4000D.webp",
+            "../pages/image/4000D.1.webp",
+            "../pages/image/4000D.2.webp",
+            "../pages/image/4000D.3.webp"
+        ]
     },
     {
         "id": 8,
@@ -67,7 +104,14 @@
         "brand": "Nikon",
         "category": "DSLR",
         "price": 8990000,
-        "image": "https://tse3.mm.bing.net/th/id/OIP.Ya2QsnIepQ0IrvmWXJdSoQHaG3?r=0&pid=Api&h=220&P=0"
+        "image": "../pages/image/D3500.webp",
+        "images":[
+            "../pages/image/D3500.webp",
+            "../pages/image/D3500.1.webp",
+            "../pages/image/D3500.2.webp",
+            "../pages/image/D3500.3.jpeg",
+            "../pages/image/D3500.4"
+        ]
     },
     {
         "id": 9,
@@ -75,7 +119,13 @@
         "brand": "Nikon",
         "category": "DSLR",
         "price": 21990000,
-        "image": "https://photographylife.com/wp-content/uploads/2017/04/Nikon-D7500-DSLR.jpg"
+        "image": "../pages/image/D7500.webp",
+        "images":[
+            "../pages/image/D7500.webp",
+            "../pages/image/D7500.1.webp",
+            "../pages/image/D7500.2.webp",
+            "../pages/image/D7500.3.webp"
+        ]
     },
     {
         "id": 10,
@@ -83,7 +133,13 @@
         "brand": "Canon",
         "category": "DSLR",
         "price": 24990000,
-        "image": "https://tse4.mm.bing.net/th/id/OIP.Mg5BYuYjmlHHH-EBtBoEEQHaHa?r=0&pid=Api&h=220&P=0"
+        "image": "../pages/image/90D.webp",
+        "images":[
+            "../pages/image/90D.webp",
+            "../pages/image/90D.1.webp",
+            "../pages/image/90D.2.webp",
+            "../pages/image/90D.3.webp"
+        ]
     },
 
     {
@@ -92,7 +148,13 @@
         "brand": "DJI",
         "category": "Compact",
         "price": 13990000,
-        "image": "https://tse4.mm.bing.net/th/id/OIP.m8uojyGg1BjhJe21Y6AERAHaHa?r=0&pid=Api&h=220&P=0"
+        "image": "../pages/image/PK3.webp",
+        "images":[
+            "../pages/image/PK3.webp",
+            "../pages/image/PK3.1.webp",
+            "../pages/image/PK3.2.webp",
+            "../pages/image/PK3.3.webp"
+        ]
     },
     {
         "id": 12,
@@ -100,7 +162,13 @@
         "brand": "DJI",
         "category": "Compact",
         "price": 15990000,
-        "image": "https://videolane.com/wp-content/uploads/Imagined-Osmo-Pocket-4-Gemini.jpg"
+        "image": "../pages/image/PK4.webp",
+        "images":[
+            "../pages/image/PK4.webp",
+            "../pages/image/PK4.1.webp",
+            "../pages/image/PK4.2.webp",
+            "../pages/image/PK4.3.webp"
+        ]
     },
     {
         "id": 13,
@@ -108,7 +176,13 @@
         "brand": "Sony",
         "category": "Compact",
         "price": 14990000,
-        "image": "https://pxlmag.com/db/images/cameras/gallery/fullsize/Sony-ZV-1/Sony-ZV-1-front.jpg"
+        "image": "../pages/image/ZV1.webp",
+        "images":[
+            "../pages/image/ZV1.webp",
+            "../pages/image/ZV1.1.webp",
+            "../pages/image/ZV1.2.webp",
+            "../pages/image/ZV1.3.webp"
+        ]
     },
     {
         "id": 14,
@@ -116,7 +190,12 @@
         "brand": "Canon",
         "category": "Compact",
         "price": 6500000,
-        "image": "https://tse2.mm.bing.net/th/id/OIP.gBtKmGF9GzdmdBlKI35qpgHaHa?r=0&pid=Api&h=220&P=0"
+        "image": "../pages/image/SX620.webp",
+        "images":[
+            "../pages/image/SX620.webp",
+            "../pages/image/SX620.1.webp",
+            "../pages/image/SX620.2.webp"
+        ]
     },
 
     {
@@ -125,7 +204,13 @@
         "brand": "Canon",
         "category": "Lens",
         "price": 5490000,
-        "image": "https://radojuva.com/wp-content/uploads/2020/11/canon-rf-lens-50mm-f-1-8-stm-new-2020-5.jpg"
+        "image": "../pages/image/RF50.webp",
+        "images":[
+            "../pages/image/RF50.webp",
+            "../pages/image/RF50.1.webp",
+            "../pages/image/FE50.2.webp",
+            "../pages/image/RF50.3.webp"
+        ]
     },
     {
         "id": 16,
@@ -133,7 +218,14 @@
         "brand": "Sony",
         "category": "Lens",
         "price": 5990000,
-        "image": "https://tse1.mm.bing.net/th/id/OIP.asz0yW18Fb_LjYwaYf0KLQHaHa?r=0&pid=Api&h=220&P=0"
+        "image": "../pages/image/FE50.jpeg",
+        "images":[
+            "../pages/image/FE50.jpeg",
+            "../pages/image/FE50.1.jpeg",
+            "../pages/image/FE50.2.jpeg",
+            "../pages/image/FE50.3.jpeg",
+            "../pages/image/FE50.4.jpeg"
+        ]
     },
     {
         "id": 17,
@@ -141,7 +233,13 @@
         "brand": "Canon",
         "category": "Lens",
         "price": 2500000,
-        "image": "https://www.ephotozine.com/articles/canon-ef-50mm-f-1-8-stm-lens-review-27666/images/highres-Canon-EF-50mm-f1-8-STM-5_1433862749.jpg"
+        "image": "../pages/image/EF50.jpeg",
+        "images":[
+            "../pages/image/EF50.jpeg",
+            "../pages/image/EF50.1.jpeg",
+            "../pages/image/EF50.2.jpeg",
+            "../pages/image/EF50.3.jpeg"
+        ]
     },
     {
         "id": 18,
@@ -149,6 +247,12 @@
         "brand": "Sony",
         "category": "Lens",
         "price": 3990000,
-        "image": "https://www.ephotozine.com/articles/sony-e-16-50mm-f-3-5-5-6-oss-lens-review-20667/images/highres-sony-16-50mm-oss-lens_1352811627.jpg"
+        "image": "../pages/image/1650.webp",
+        "images":[
+            "../pages/image/1650.webp",
+            "../pages/image/1650.1.webp",
+            "../pages/image/1650.2.webp",
+            "../pages/image/1650.3.webp"
+        ]
     }
 ]

@@ -1,4 +1,4 @@
-// 1. KHO DỮ LIỆU ĐẦY ĐỦ 18 SẢN PHẨM[cite: 8]
+// 1. KHO DỮ LIỆU ĐẦY ĐỦ 18 SẢN PHẨM
 const products = [
     { id: 1, name: "Canon EOS R50", brand: "Canon", category: "Mirrorless", price: 16490000, image: "https://tse3.mm.bing.net/th/id/OIP.9Sxb3w5iK6Sl72cqWAEWLQHaHa?r=0&pid=Api&h=220&P=0" },
     { id: 2, name: "Sony Alpha A6400", brand: "Sony", category: "Mirrorless", price: 18390000, image: "https://tse4.mm.bing.net/th/id/OIP.46QrbQ6cnKUHTjjeaQhiJwHaEU?r=0&pid=Api&h=220&P=0" },
@@ -20,7 +20,7 @@ const products = [
     { id: 18, name: "Sony 16-50mm F3.5-5.6 OSS", brand: "Sony", category: "Lens", price: 3990000, image: "https://www.ephotozine.com/articles/sony-e-16-50mm-f-3-5-5-6-oss-lens-review-20667/images/highres-sony-16-50mm-oss-lens_1352811627.jpg" }
 ];
 
-// THÔNG TIN NỔI BẬT CHI TIẾT THEO TỪNG THIẾT BỊ[cite: 8, 9]
+// THÔNG TIN NỔI BẬT CHI TIẾT THEO TỪNG THIẾT BỊ
 const highlightsDict = {
     1: ["Cảm biến APS-C CMOS 24.2MP kết hợp DIGIC X", "Lấy nét Dual Pixel CMOS AF II với 651 điểm", "Chụp liên tục 15 fps", "Quay video 4K/30p không crop, Full HD 120p"],
     2: ["Cảm biến APS-C Exmor CMOS 24.2MP và BIONZ X", "Lấy nét kỷ lục 0.02s với 425 điểm theo pha", "Real-time Eye AF và Real-time Tracking", "Màn hình cảm ứng LCD lật 180 độ"],
@@ -42,7 +42,79 @@ const highlightsDict = {
     18: ["Zoom đa dụng Pancake siêu mỏng nhẹ 116g", "Chống rung quang học Optical SteadyShot", "Cần gạt Power Zoom hỗ trợ thu phóng mượt", "Gồm 4 thấu kính phi cầu tối ưu quang sai"]
 };
 
-// 2. LẤY SẢN PHẨM HIỆN TẠI TỪ URL (?id=...)[cite: 8]
+// 👉 KHO ẢNH PHÂN LOẠI
+const variantImagesDict = {
+    1: { // Canon EOS R50 (ID: 1)
+        "black_body": "image/R50.black.bodyonly.webp",
+        "black_kit":  "image/R50.black.lenkit.webp",
+        "silver_body": "image/R50.silver.bodyonly.webp",
+        "silver_kit":  "image/R50.silver.lenkit.webp"
+    },
+    2: { // Sony Alpha A6400 (ID: 2)
+        "black_body": "image/A6400.black.bodyonly.webp",
+        "black_kit":  "image/A6400.black.lenkit.jpg",
+        "silver_body": "image/A6400.silver.bodyonly.jpg",
+        "silver_kit":  "image/A6400.silver.lenkit.jpg"
+    },
+    3: { // Fujifilm X-T5 (ID: 3)
+        "black_body": "image/XT5.black.bodyonly.jpg",
+        "black_kit":  "image/XT5.black.lenkit.webp",
+        "silver_body": "image/XT5.silver.bodyonly.webp",
+        "silver_kit":  "image/XT5.silver.lenkit.webp"
+    },
+    4: { // Sony Alpha A6000 (ID: 4)
+        "black_body": "image/A6000.black.bodyonly.jpg",
+        "black_kit":  "image/A6000.black.lenkit.jpg",
+        "silver_body": "image/A6000.silver.bodyonly.jpg",
+        "silver_kit":  "image/A6000.silver.lenkit.jpg"
+    },
+    5: { // Canon EOS M10 (ID: 5)
+        "black_body": "image/M10.black.bodyonly.jpg",
+        "black_kit":  "image/M10.black.lenkit.jpg",
+        "silver_body": "image/M10.silver.bodyonly.jpg",
+        "silver_kit":  "image/M10.silver.lenkit.jpg"
+    },
+    6: { // Fujifilm X-A10 (ID: 6)
+        "black_body": "image/XA10.black.bodyonly.jpg",
+        "black_kit":  "image/XA10.black.lenkit.webp",
+        "silver_body": "image/XA10.silver.bodyonly.jpg",
+        "silver_kit":  "image/XA10.silver.lenkit.jpg"
+    },
+    7: { // Canon EOS 4000D (ID: 7)
+        "black_body": "image/4000D.black.bodyonly.jpg",
+        "black_kit":  "image/4000D.black.lenkit.jpg"
+    },
+    8: { // Nikon D3500 (ID: 8)
+        "black_body": "image/D3500.black.bodyonly.jpg",
+        "black_kit":  "image/D3500.black.lenkit.jpg"
+    },
+    9: { // Nikon D7500 (ID: 9)
+        "black_body": "image/D7500.black.bodyonly.jpg",
+        "black_kit":  "image/D7500.black.lenkit.jpg"
+    },
+    10: { // Canon EOS 90D (ID: 10)
+        "black_body": "image/90D.black.bodyonly.jpg",
+        "black_kit":  "image/90D.black.lenkit.jpg"
+    },
+    13: { // Sony ZV-1 (ID: 13)
+        "black_body": "image/ZV1.black.bodyonly.jpg",
+        "black_kit":  "image/ZV1.black.lenkit.webp",
+        "silver_body": "image/ZV1.silver.bodyonly.webp",
+        "silver_kit":  "image/ZV1.silver.lenkit.webp"
+    },
+    14: { // Sony ZV-1 (ID: 14)
+        "black_body": "image/ZV1.black.bodyonly.jpg",
+        "black_kit":  "image/ZV1.black.lenkit.webp",
+        "silver_body": "image/ZV1.silver.bodyonly.webp",
+        "silver_kit":  "image/ZV1.silver.lenkit.webp"
+    }
+};
+
+// 👉 BIẾN LƯU TRẠNG THÁI HIỆN TẠI
+let selectedColor = "Black";
+let selectedStyle = "Body Only";
+
+// 2. LẤY SẢN PHẨM HIỆN TẠI TỪ URL (?id=...)
 const params = new URLSearchParams(window.location.search);
 const currentId = Number(params.get("id")) || 1;
 const currentItem = products.find(p => p.id === currentId) || products[0];
@@ -54,10 +126,60 @@ function switchImageThumb(element, src) {
     document.getElementById("mainPreviewImg").src = src;
 }
 
+// HÀM CHỌN NÚT PHÂN LOẠI
 function selectVariantOption(button, labelId, value) {
+    // 1. Đổi màu nút được chọn
     button.parentElement.querySelectorAll(".btn-variant").forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
+    
+    // 2. Cập nhật nhãn hiển thị (VD: Màu sắc: Silver)
     document.getElementById(labelId).innerText = value;
+
+    // 3. Cập nhật giá trị đang chọn
+    if (labelId === 'lblColor') {
+        selectedColor = value;
+    } else if (labelId === 'lblStyle') {
+        selectedStyle = value;
+    }
+
+    // 4. Đổi hình ảnh chính ngay lập tức
+    updateMainProductImage();
+    // 5. Cập nhật giá theo phiên bản
+    updateProductPrice();
+}
+// CẬP NHẬT GIÁ THEO PHIÊN BẢN
+function updateProductPrice() {
+    let price = currentItem.price;
+
+    // Nếu chọn Kèm Kit Lens thì cộng thêm 2 triệu
+    if (selectedStyle === "Kèm Kit Lens") {
+        price += 2000000;
+    }
+
+    document.querySelector(".highlight-price").innerText =
+        price.toLocaleString("vi-VN") + " đ";
+}
+// HÀM XỬ LÝ ĐỔI ẢNH THEO TỪNG LỰA CHỌN PHÂN LOẠI
+function updateMainProductImage() {
+    const productImages = variantImagesDict[currentItem.id];
+    if (!productImages) return;
+
+    // Lọc từ khóa
+    const isSilver = selectedColor.toLowerCase().includes("silver");
+    const isKit = selectedStyle.toLowerCase().includes("kit");
+
+    let key = "";
+    if (isSilver && isKit) key = "silver_kit";
+    else if (isSilver && !isKit) key = "silver_body";
+    else if (!isSilver && isKit) key = "black_kit";
+    else key = "black_body";
+
+    const newImgSrc = productImages[key];
+
+    if (newImgSrc) {
+        document.getElementById("mainPreviewImg").src = newImgSrc;
+        document.querySelectorAll(".thumbnail-item").forEach(item => item.classList.remove("active"));
+    }
 }
 
 function adjustOrderQty(delta) {
@@ -153,13 +275,19 @@ window.addEventListener("DOMContentLoaded", function () {
             </div>` : ""}
 
             <!-- Thao tác mua hàng -->
+            <!-- Thao tác mua hàng -->
             <div class="action-checkout-row">
                 <div class="quantity-picker">
                     <button type="button" onclick="adjustOrderQty(-1)">-</button>
                     <input type="text" id="orderQty" value="1" readonly>
                     <button type="button" onclick="adjustOrderQty(1)">+</button>
                 </div>
-                <button type="button" class="btn-buy-primary" onclick="alert('Đã thêm ${currentItem.name} vào giỏ hàng!')">MUA NGAY</button>
+                <div class="action-buttons">
+                    <!-- Nút Thêm vào giỏ hàng giữ nguyên thông báo Alert -->
+                    <button type="button" class="btn-add-cart" onclick="addToCart()">THÊM VÀO GIỎ</button>                    
+                    <!-- Nút Mua ngay (có thể đổi sang chuyển hướng trang thanh toán) -->
+                    <button type="button" class="btn-buy-primary" onclick="alert('Đang chuyển đến trang thanh toán...')">MUA NGAY</button>
+                </div>
             </div>
 
             <!-- Hộp quà tặng kèm viền đỏ đứt nét -->
@@ -186,11 +314,10 @@ window.addEventListener("DOMContentLoaded", function () {
         </div>
     `;
 
-    // B. Logic Phụ kiện khuyên dùng (Ưu tiên Lọc Ống kính CÙNG HÃNG với máy)[cite: 8]
+    // B. Logic Phụ kiện khuyên dùng (Ưu tiên Lọc Ống kính CÙNG HÃNG với máy)
     document.getElementById("accessoriesTitle").innerText = `Phụ kiện & Ống kính khuyên dùng cho ${currentItem.brand}`;
     let accessories = products.filter(p => p.id !== currentItem.id && p.category === "Lens" && p.brand === currentItem.brand);
 
-    // Nếu hãng đó chưa có lens trong kho data (như Fujifilm, Nikon, DJI), bổ sung thêm các Lens hoặc phụ kiện khác trong kho[cite: 8]
     if (accessories.length === 0) {
         accessories = products.filter(p => p.id !== currentItem.id && (p.category === "Lens" || p.category === "Compact")).slice(0, 5);
     }
@@ -204,11 +331,10 @@ window.addEventListener("DOMContentLoaded", function () {
         </div>
     `).join("");
 
-    // C. Logic Sản phẩm tương tự (CHỈ HIỂN THỊ CÙNG HÃNG)[cite: 8]
+    // C. Logic Sản phẩm tương tự (CHỈ HIỂN THỊ CÙNG HÃNG)
     document.getElementById("relatedTitle").innerText = `SẢN PHẨM KHÁC TỪ THƯƠNG HIỆU ${currentItem.brand.toUpperCase()}`;
     let sameBrandProducts = products.filter(p => p.id !== currentItem.id && p.brand === currentItem.brand);
 
-    // Trường hợp hãng chỉ có 1 sản phẩm duy nhất (như Fujifilm X-A10 hoặc DJI), bổ sung thêm sản phẩm cùng phân loại category[cite: 8]
     if (sameBrandProducts.length === 0) {
         sameBrandProducts = products.filter(p => p.id !== currentItem.id && p.category === currentItem.category).slice(0, 5);
     }
@@ -225,3 +351,29 @@ window.addEventListener("DOMContentLoaded", function () {
     // D. Render nội dung Tab ban đầu
     renderTabDescription('desc');
 });
+function addToCart() {
+    // 1. Lấy giỏ hàng cũ từ trình duyệt (nếu chưa có thì tạo mảng rỗng)
+    let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+    
+    // 2. Lấy số lượng và tính lại giá (cộng 2tr nếu chọn Kit Lens)
+    const qty = parseInt(document.getElementById("orderQty").value);
+    let finalPrice = currentItem.price;
+    if (selectedStyle === "Kèm Kit Lens") finalPrice += 2000000;
+
+    // 3. Gom thông tin sản phẩm
+    const cartItem = {
+        id: currentItem.id,
+        name: currentItem.name,
+        image: document.getElementById("mainPreviewImg").src, // Lấy đúng ảnh đang chọn
+        color: selectedColor,
+        style: selectedStyle,
+        price: finalPrice,
+        quantity: qty
+    };
+
+    // 4. Lưu vào bộ nhớ
+    cart.push(cartItem);
+    localStorage.setItem('myCart', JSON.stringify(cart));
+    
+    alert(`Đã lưu ${qty} chiếc ${currentItem.name} vào giỏ hàng thật!`);
+}

@@ -1,0 +1,200 @@
+/* Nền và khung tổng của trang contact */
+.contact-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-header h1 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+}
+
+.sla-notice {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* .sla-notice a {
+    color: #c84b26;
+    font-weight: bold;
+    text-decoration: none;
+} */
+ a {
+    color: #c84b26;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Chia 2 cột chính */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 25px;
+}
+
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Khối Thẻ Card */
+.contact-container .card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #eaeaea;
+}
+
+.card-subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #c84b26;
+    letter-spacing: 0.5px;
+}
+
+.contact-container .card h2, 
+.contact-container .card h3 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Danh sách thông tin & Showroom */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.9rem;
+}
+
+.info-list .label {
+    color: #777;
+    font-weight: 500;
+}
+
+.info-list .value a {
+    color: #c84b26;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Form đặt câu hỏi / gọi lại */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #c84b26;
+    background-color: #fff;
+}
+
+.form-checkbox {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-submit {
+    background-color: #c84b26;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #a83c1d;
+}
+
+.response-time {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Khối Bản đồ Google Maps */
+.map-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Khối FAQ câu hỏi thường gặp */
+.faq-section {
+    margin-top: 50px;
+}
+
+.faq-item {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #eaeaea;
+}
+
+.faq-item summary {
+    font-weight: 600;
+}
+
+.faq-item p {
+    margin-top: 10px;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}

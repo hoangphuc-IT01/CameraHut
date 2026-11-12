@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán - Camera Hut</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        .checkout-container { display: flex; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .checkout-left { flex: 6; display: flex; flex-direction: column; gap: 20px; }
+        .checkout-right { flex: 4; padding: 20px; background: #f9f9f9; border-radius: 8px; height: fit-content; border: 1px solid #ddd; }
+        
+        .checkout-box { padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .checkout-box h3 { margin-top: 0; border-bottom: 2px solid #c90000; padding-bottom: 10px; color: #c90000; }
+        
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        
+        /* CÁC PHƯƠNG THỨC THANH TOÁN */
+        .payment-methods { display: flex; flex-direction: column; gap: 10px; }
+        .payment-label { display: flex; align-items: center; gap: 10px; padding: 15px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; font-weight: bold; background: #fafafa; }
+        .payment-label:hover { background: #f0f8ff; border-color: #91d5ff; }
+        .payment-label input { width: auto; transform: scale(1.2); }
+        
+        .payment-content { display: none; padding: 15px; background: #fff; border: 1px solid #ddd; border-top: none; margin-top: -10px; margin-bottom: 10px; border-radius: 0 0 4px 4px; }
+        .payment-content.active { display: block; }
+        
+        /* QR Code */
+        .qr-box { text-align: center; }
+        .qr-box img { width: 200px; height: 200px; object-fit: cover; margin-bottom: 10px; border: 1px solid #eee; padding: 5px; }
+        .qr-info { text-align: left; background: #f9f9f9; padding: 15px; border: 1px dashed #ccc; display: inline-block; width: 100%; box-sizing: border-box; }
+        .qr-info p { margin: 5px 0; }
+        
+        /* Công cụ trả góp */
+        .term-btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        .term-btn { flex: 1; padding: 10px; border: 1px solid #ccc; background: #fff; cursor: pointer; border-radius: 4px; transition: 0.3s; }
+        .term-btn.active { background: #c90000; color: #fff; border-color: #c90000; font-weight: bold; }
+        .calc-results { margin-top: 15px; padding: 15px; background: #f0f8ff; border: 1px solid #91d5ff; border-radius: 4px; }
+        .result-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .result-row.total { font-size: 16px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #ccc; }
+        
+        .order-item { display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #ccc; }
+        .btn-submit { width: 100%; padding: 15px; background: #c90000; color: #fff; border: none; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 4px; margin-top: 15px; transition: 0.3s; }
+        .btn-submit:hover { background: #a30000; }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="page-container" style="padding: 40px 20px; min-height: 50vh;">
+        <h1 style="border-bottom: 2px solid #c90000; padding-bottom: 10px; text-transform: uppercase;">Tiến hành thanh toán</h1>
+        
+        <div class="checkout-container">
+            <!-- Cột Trái: Thông tin & Thanh toán -->
+            <div class="checkout-left">
+                <!-- Thông tin giao hàng -->
+                <div class="checkout-box">
+                    <h3>1. Thông tin người nhận</h3>
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        <input type="text" id="cusName" placeholder="Nhập họ tên...">
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" id="cusPhone" placeholder="Nhập số điện thoại...">
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ giao hàng chi tiết</label>
+                        <input type="text" id="cusAddress" placeholder="Nhập địa chỉ nhận hàng...">
+                    </div>
+                </div>
+
+                <!-- Phương thức thanh toán -->
+                <div class="checkout-box">
+                    <h3>2. Phương thức thanh toán</h3>
+                    <div class="payment-methods">
+                        
+                        <!-- 1: COD (Cọc 50%) -->
+                        <label class="payment-label" onclick="switchPayment('cod')">
+                            <input type="radio" name="paymentType" value="cod" checked> 1. Thanh toán khi nhận hàng (COD - Yêu cầu cọc 50%)
+                        </label>
+                        <div id="content-cod" class="payment-content active">
+                            <div class="qr-box">
+                                <p style="color: #c90000; margin-bottom: 10px;">Sản phẩm giá trị cao, quý khách vui lòng quét mã QR chuyển khoản cọc trước 50% để CameraHut xác nhận và xuất kho nhé!</p>
+                                <div style="background: #fff0f0; border: 1px solid #ffa39e; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                                    Số tiền cần cọc: <strong style="color: #c90000; font-size: 18px;" id="depositAmount">0 đ</strong>
+                                </div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Đặt Cọc">
+                                <div class="qr-info">
+                                    <p><strong>Ngân hàng:</strong> Vietcombank - CN HN</p>
+                                    <p><strong>Chủ tài khoản:</strong> CAMERAHUT</p>
+                                    <p><strong>Số tài khoản:</strong> <span style="color: #c90000; font-weight: bold;">8883868386</span></p>
+                                    <p><strong>Nội dung ck:</strong> [Số điện thoại] - DAT COC COD</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2: Chuyển khoản (100%) -->
+                        <label class="payment-label" onclick="switchPayment('bank')">
+                            <input type="radio" name="paymentType" value="bank"> 2. Chuyển khoản Ngân hàng (100% giá trị đơn)
+                        </label>
+                        <div id="content-bank" class="payment-content">
+                            <div class="qr-box">
+                                <p style="margin-bottom: 15px;">Ngay sau khi nhận được thanh toán, bộ phận xử lý đơn hàng sẽ liên hệ xác nhận và tiến hành giao hàng.</p>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Chuyển Khoản">
+                                <div class="qr-info">
+                                    <p><strong>Ngân hàng:</strong> Vietcombank - CN HN</p>
+                                    <p><strong>Chủ tài khoản:</strong> CAMERAHUT</p>
+                                    <p><strong>Số tài khoản:</strong> <span style="color: #c90000; font-weight: bold;">8883868386</span></p>
+                                    <p><strong>Nội dung ck:</strong> [Số điện thoại] - THANH TOAN</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3: Trả góp qua mPOS -->
+                        <label class="payment-label" onclick="switchPayment('installment')">
+                            <input type="radio" name="paymentType" value="installment"> 3. Thanh toán trả góp qua thẻ tín dụng (mPOS)
+                        </label>
+                        <div id="content-installment" class="payment-content">
+                            <p style="margin-top:0;">Công cụ dự tính chi phí trả góp qua thẻ tín dụng:</p>
+                            
+                            <div class="form-group">
+                                <label>Tỷ lệ trả trước (%):</label>
+                                <select id="prepaidPercent" onchange="calculateInstallment()">
+                                    <option value="0">0% (Trả góp 100%)</option>
+                                    <option value="20">20%</option>
+                                    <option value="30" selected>30%</option>
+                                    <option value="50">50%</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Kỳ hạn trả góp:</label>
+                                <div class="term-btn-group">
+                                    <button type="button" class="term-btn" onclick="selectTerm(3, this)">3 tháng</button>
+                                    <button type="button" class="term-btn active" onclick="selectTerm(6, this)">6 tháng</button>
+                                    <button type="button" class="term-btn" onclick="selectTerm(9, this)">9 tháng</button>
+                                    <button type="button" class="term-btn" onclick="selectTerm(12, this)">12 tháng</button>
+                                </div>
+                            </div>
+
+                            <!-- Bảng kết quả -->
+                            <div class="calc-results">
+                                <h4 style="margin-top: 0; margin-bottom: 10px;">Bảng ước tính chi phí</h4>
+                                <div class="result-row">
+                                    <span>Số tiền trả trước:</span>
+                                    <strong id="resPrepaid">0 đ</strong>
+                                </div>
+                                <div class="result-row">
+                                    <span>Số tiền cần trả góp:</span>
+                                    <strong id="resLoan">0 đ</strong>
+                                </div>
+                                <div class="result-row total">
+                                    <span>Gốc mỗi tháng:</span>
+                                    <strong id="resMonthly" style="color: #c90000;">0 đ</strong>
+                                </div>
+                                <p style="font-size: 12px; color: #666; margin-top: 10px; margin-bottom: 0;">
+                                    *Lưu ý: Mức phí quẹt thẻ mPOS thực tế (nếu có) tùy thuộc vào Ngân hàng tại thời điểm quẹt thẻ và sẽ được nhân viên thông báo cụ thể.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột Phải: Tóm tắt đơn hàng -->
+            <div class="checkout-right">
+                <h3 style="margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 10px;">Tóm tắt đơn hàng</h3>
+                <div id="orderItemsList"></div>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 20px; font-size: 20px; font-weight: bold;">
+                    <span>Tổng cộng:</span>
+                    <span id="checkoutTotal" style="color: #c90000;">0 đ</span>
+                </div>
+                
+                <button class="btn-submit" onclick="hoanTatDatHang()">XÁC NHẬN ĐẶT HÀNG</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/include.js"></script>
+    <script>
+        let orderTotalAmount = 0;
+        let selectedTerm = 6; // Mặc định trả góp 6 tháng
+
+        // 1. TẢI DỮ LIỆU ĐƠN HÀNG KHI MỞ TRANG
+        window.addEventListener("DOMContentLoaded", function() {
+            const checkoutItems = JSON.parse(localStorage.getItem('checkoutItems')) || [];
+            if(checkoutItems.length === 0) {
+                window.location.href = "cart.html";
+                return;
+            }
+
+            const listContainer = document.getElementById("orderItemsList");
+            let html = "";
+
+            checkoutItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                orderTotalAmount += itemTotal;
+                
+                html += `
+                    <div class="order-item">
+                        <div>
+                            <strong>${item.name}</strong> <br>
+                            <small>${item.color} | ${item.style} (x${item.quantity})</small>
+                        </div>
+                        <div style="font-weight: bold;">${itemTotal.toLocaleString("vi-VN")} đ</div>
+                    </div>
+                `;
+            });
+
+            listContainer.innerHTML = html;
+            document.getElementById("checkoutTotal").innerText = orderTotalAmount.toLocaleString("vi-VN") + " đ";
+            
+            // Tính cọc 50% cho COD
+            document.getElementById("depositAmount").innerText = (orderTotalAmount / 2).toLocaleString("vi-VN") + " đ";
+            
+            // Tính số liệu trả góp lần đầu
+            calculateInstallment();
+        });
+
+        // 2. CHUYỂN ĐỔI TAB THANH TOÁN
+        function switchPayment(type) {
+            document.getElementById('content-cod').classList.remove('active');
+            document.getElementById('content-bank').classList.remove('active');
+            document.getElementById('content-installment').classList.remove('active');
+            
+            document.getElementById('content-' + type).classList.add('active');
+        }
+
+        // 3. LOGIC TÍNH TRẢ GÓP (Giống trang chính sách)
+        function selectTerm(months, btnElement) {
+            selectedTerm = months;
+            
+            // Đổi màu nút được bấm
+            const buttons = document.querySelectorAll('.term-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            // Tính lại
+            calculateInstallment();
+        }
+
+        function calculateInstallment() {
+            const percent = parseInt(document.getElementById("prepaidPercent").value); // Lấy % trả trước
+            
+            const tienTraTruoc = orderTotalAmount * (percent / 100);
+            const tienCanTraGop = orderTotalAmount - tienTraTruoc;
+            const gocMoiThang = tienCanTraGop / selectedTerm;
+
+            document.getElementById("resPrepaid").innerText = tienTraTruoc.toLocaleString("vi-VN") + " đ";
+            document.getElementById("resLoan").innerText = tienCanTraGop.toLocaleString("vi-VN") + " đ";
+            document.getElementById("resMonthly").innerText = gocMoiThang.toLocaleString("vi-VN") + " đ";
+        }
+
+        // 4. XỬ LÝ KHI BẤM ĐẶT HÀNG
+        function hoanTatDatHang() {
+            const ten = document.getElementById("cusName").value;
+            const sdt = document.getElementById("cusPhone").value;
+            const diachi = document.getElementById("cusAddress").value;
+            const paymentType = document.querySelector('input[name="paymentType"]:checked').value;
+
+            if(ten === "" || sdt === "" || diachi === "") {
+                alert("Vui lòng điền đầy đủ thông tin người nhận ở Bước 1!");
+                return;
+            }
+
+            let thongBao = `Cảm ơn ${ten}! Đơn hàng của bạn đã được tiếp nhận.\n\n`;
+            
+            if(paymentType === 'cod') {
+                const tienCoc = (orderTotalAmount / 2).toLocaleString("vi-VN");
+                thongBao += `[THANH TOÁN COD] Vui lòng ck cọc trước ${tienCoc} đ với cú pháp: ${sdt} - DAT COC COD.\nCameraHut sẽ liên hệ bạn ngay sau khi nhận được cọc!`;
+            } else if (paymentType === 'bank') {
+                thongBao += `[CHUYỂN KHOẢN] Vui lòng ck thanh toán ${orderTotalAmount.toLocaleString("vi-VN")} đ.\nCú pháp ck: ${sdt} - THANH TOAN.`;
+            } else if (paymentType === 'installment') {
+                const percent = document.getElementById("prepaidPercent").value;
+                thongBao += `[TRẢ GÓP mPOS]\n- Trả góp: ${selectedTerm} tháng\n- Trả trước: ${percent}%\nNhân viên sẽ liên hệ gửi link quẹt thẻ cho bạn trong chốc lát!`;
+            }
+
+            alert(thongBao);
+
+            // Đặt hàng thành công -> Xóa giỏ hàng -> Về trang chủ
+            localStorage.removeItem('myCart');
+            localStorage.removeItem('checkoutItems');
+            window.location.href = "index.html"; // Hoặc trang "Cảm ơn" nếu bạn có làm
+        }
+    </script>
+</body>
+</html>

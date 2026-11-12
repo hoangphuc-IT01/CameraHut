@@ -1,0 +1,140 @@
+/* ==========================================================================
+   CSS TRANG CHÍNH SÁCH - CAMERAHUT (GIAO DIỆN TỐI GIẢN)
+   ========================================================================== */
+
+:root {
+  --text-main: #27272a;       /* Màu chữ chính (Đen mờ hiện đại) */
+  --text-heading: #111827;    /* Màu tiêu đề */
+  --text-muted: #71717a;      /* Màu breadcrumb */
+  --link-color: #6b21a8;      /* Màu tím link giống hình mẫu */
+  --bg-color: #ffffff;        /* Nền trắng */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* KHUNG CHỨA NỘI DUNG */
+.page-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* TIÊU ĐỀ TRANG (H1) */
+.page-title,
+.page-tiltle {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+/* ĐOẠN VĂN BẢN & ĐƯỜNG DẪN */
+p, .intro-text {
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* CÁC MỤC CHÍNH SÁCH (H2) */
+.chinhsach-section {
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+
+.chinhsach-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* DANH SÁCH UL / OL */
+.chinhsach-section ul,
+.chinhsach-section ol {
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+
+.chinhsach-section li {
+  margin-bottom: 10px;
+  line-height: 1.65;
+}
+
+/* Xử lý thẻ li đứng lẻ ngoài ul */
+.chinhsach-section > li {
+  margin-left: 24px;
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+
+/* Sub-list (danh sách lồng nhau) */
+.chinhsach-section ul ul,
+.chinhsach-section ol ul {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+}
+
+/* CHỮ IN ĐẬM */
+strong {
+  font-weight: 700;
+  color: var(--text-heading);
+}
+ a{
+    color: #c84b26;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* RESPONSIVE MÀN HÌNH NHỎ */
+@media (max-width: 768px) {
+  .page-container {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+
+  .page-title,
+  .page-tiltle {
+    font-size: 26px;
+  }
+
+  .chinhsach-section h2 {
+    font-size: 18px;
+  }
+}

@@ -476,3 +476,34 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/* Bao bọc 2 nút bấm */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    width: 100%;
+}
+
+/* Style cho nút Thêm vào giỏ hàng */
+.btn-add-cart {
+    flex: 1;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #c90000; /* Màu đỏ cho đồng bộ */
+    border: 2px solid #c90000;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add-cart:hover {
+    background-color: #fff2f2;
+}
+
+/* Đảm bảo nút Mua Ngay cũ cũng chia đều không gian (nếu class cũ chưa có) */
+.btn-buy-primary {
+    flex: 1;
+    /* Các thuộc tính màu sắc, padding cũ của bạn sẽ tự động được giữ nguyên */
+}
