@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng - Camera Hut</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .cart-table th, .cart-table td { border: 1px solid #ddd; padding: 15px; text-align: center; }
+        .cart-table th { background-color: #f4f4f4; }
+        .cart-table img { width: 80px; object-fit: cover; }
+        
+        /* Style cho checkbox to và rõ hơn */
+        .cart-table input[type="checkbox"] { transform: scale(1.5); cursor: pointer; }
+        
+        /* Style cho nút thanh toán */
+        .checkout-bar { display: flex; justify-content: flex-end; align-items: center; margin-top: 30px; gap: 30px; }
+        .btn-checkout { background-color: #c90000; color: white; border: none; padding: 12px 30px; font-size: 18px; font-weight: bold; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .btn-checkout:hover { background-color: #a30000; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="page-container" style="padding: 40px 20px; min-height: 50vh;">
+        <h1 style="border-bottom: 2px solid #c90000; padding-bottom: 10px;">GIỎ HÀNG CỦA BẠN</h1>
+        <div id="cartContainer">
+            <!-- Sản phẩm sẽ được vẽ bằng JavaScript vào đây -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/include.js"></script>
+    <script>
+        // 1. Biến toàn cục lưu giỏ hàng
+        let cart = [];
+
+        window.addEventListener("DOMContentLoaded", function() {
+            cart = JSON.parse(localStorage.getItem('myCart')) || [];
+            renderCart();
+        });
+
+        // 2. Hàm vẽ giỏ hàng ra màn hình
+        function renderCart() {
+            const container = document.getElementById("cartContainer");
+            if(cart.length === 0) {
+                container.innerHTML = "<p>Giỏ hàng đang trống. Hãy quay lại mua sắm nhé!</p>";
+                return;
+            }
+
+            // Thêm cột checkbox vào tiêu đề bảng
+            let html = `
+                <table class="cart-table">
+                    <tr>
+                        <th style="width: 50px;"><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"></th>
+                        <th>Hình ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Phân loại</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+            `;
+            
+            // Render từng hàng sản phẩm, thêm ô checkbox
+            cart.forEach((item, index) => {
+                const rowTotal = item.price * item.quantity;
+                html += `
+<tr>
+                        <td><input type="checkbox" class="item-check" checked data-index="${index}" onchange="updateSelectedTotal()"></td>
+                        <td><img src="${item.image}" alt="ảnh"></td>
+                        <td><strong>${item.name}</strong></td>
+                        <td>${item.color} <br> ${item.style}</td>
+                        <td>${item.price.toLocaleString("vi-VN")} đ</td>
+                        <td>${item.quantity}</td>
+                        <td class="row-total" data-value="${rowTotal}" style="color: #c90000; font-weight: bold;">${rowTotal.toLocaleString("vi-VN")} đ</td>
+                    </tr>
+                `;
+            });
+            html += `</table>`;
+
+            // Thêm khu vực Tổng tiền + Nút Thanh toán
+            html += `
+                <div class="checkout-bar">
+                    <h2 style="color: #c90000; margin: 0;">Tổng thanh toán: <span id="finalTotal">0 đ</span></h2>
+                    <button class="btn-checkout" onclick="goToCheckout()">THANH TOÁN</button>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+            updateSelectedTotal(); // Tính toán tổng tiền ngay khi load xong
+        }
+
+        // 3. Hàm chọn / Bỏ chọn tất cả
+        function toggleAll(source) {
+            const checkboxes = document.querySelectorAll('.item-check');
+            checkboxes.forEach(cb => cb.checked = source.checked);
+            updateSelectedTotal();
+        }
+
+        // 4. Hàm tính lại tổng tiền chỉ cho những món được tick
+        function updateSelectedTotal() {
+            const checkboxes = document.querySelectorAll('.item-check');
+            let total = 0;
+            checkboxes.forEach(cb => {
+                if(cb.checked) {
+                    const rowTotal = parseInt(cb.closest('tr').querySelector('.row-total').getAttribute('data-value'));
+                    total += rowTotal;
+                }
+            });
+            document.getElementById('finalTotal').innerText = total.toLocaleString("vi-VN") + " đ";
+        }
+
+        // 5. Hàm xử lý khi bấm nút THANH TOÁN
+        function goToCheckout() {
+            const checkboxes = document.querySelectorAll('.item-check');
+            let selectedItems = [];
+            
+            // Lọc ra các sản phẩm đang được tick
+            checkboxes.forEach(cb => {
+                if(cb.checked) {
+                    const index = cb.getAttribute('data-index');
+                    selectedItems.push(cart[index]);
+                }
+            });
+
+            // Nếu không chọn món nào thì báo lỗi
+            if(selectedItems.length === 0) {
+                alert("Vui lòng chọn ít nhất 1 sản phẩm để thanh toán!");
+                return;
+            }
+
+            // Lưu các món đã chọn vào bộ nhớ riêng cho trang thanh toán
+localStorage.setItem('checkoutItems', JSON.stringify(selectedItems));
+            
+            // Nhảy sang trang checkout.html (trang chọn phương thức trả góp / CK mà bạn vừa làm)
+            window.location.href = "checkout.html";
+        }
+    </script>
+</body>
+</html>

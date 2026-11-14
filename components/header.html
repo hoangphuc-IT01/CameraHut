@@ -13,6 +13,27 @@
     </nav>
     <div class="header-actions">
         <a href="#">🔍 Tìm kiếm</a>
-        <a href="#">🛒 Giỏ hàng</a>
+        <a href="/pages/cart.html" class="cart-icon">🛒 Giỏ hàng</a>
+        
     </div>
+    <!-- LỚP PHỦ LÀM MỜ NỀN KHI MỞ GIỎ HÀNG -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<!-- KHỐI GIỎ HÀNG TRƯỢT TỪ PHẢI SANG -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2>Giỏ hàng của bạn</h2>
+        <button class="close-cart-btn" onclick="toggleCart()">×</button>
+    </div>
+    
+    <div class="cart-items" id="cartItemsList">
+        <p style="text-align: center; color: #777; margin-top: 20px;">Giỏ hàng đang trống.</p>
+        <!-- Các sản phẩm được thêm vào sẽ hiển thị ở đây -->
+    </div>
+    
+    <div class="cart-footer">
+        <div class="cart-total">Tổng tiền: <span id="cartTotal">0 đ</span></div>
+        <button class="btn-checkout">TIẾN HÀNH THANH TOÁN</button>
+    </div>
+</div>
 </header>

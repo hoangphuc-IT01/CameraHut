@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - Camera Hut</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/products.css">
+    
+    <style>
+        /* CSS bổ sung xếp thanh lọc nằm ngang */
+        .filter-toolbar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .filter-toolbar .product-search {
+            flex: 1; /* Ô tìm kiếm dài ra */
+            min-width: 250px;
+        }
+        .filter-dropdown {
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+            background: white;
+            min-width: 200px;
+        }
+        .filter-dropdown:focus {
+            border-color: #111;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #111;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section style="text-align:center; padding:50px 20px 20px;">
+            <h1 style="font-size:36px; margin-bottom:10px;">Sản phẩm</h1>
+            <p style="color:#666;">Khám phá các thiết bị nhiếp ảnh chuyên nghiệp tại Camera Hut</p>
+        </section>
+
+        <section style="max-width:1200px; margin:auto; padding:10px 25px 50px;">
+            
+            <!-- THANH CÔNG CỤ LỌC -->
+            <div class="filter-toolbar">
+                <input type="text" id="search" class="product-search" placeholder="Tìm tên máy ảnh, ống kính..." oninput="applyFilters()">
+                
+                <select id="categoryFilter" class="filter-dropdown" onchange="applyFilters()">
+                    <option value="all">-- Tất cả dòng máy --</option>
+                    <option value="Mirrorless">Mirrorless</option>
+                    <option value="DSLR">DSLR</option>
+                    <option value="Compact">Compact</option>
+                    <option value="Lens">Ống kính (Lens)</option>
+                </select>
+
+                <select id="priceFilter" class="filter-dropdown" onchange="applyFilters()">
+                    <option value="all">-- Tất cả mức giá --</option>
+                    <option value="under10">Dưới 10 triệu</option>
+                    <option value="10to20">10 triệu - 20 triệu</option>
+                    <option value="20to40">20 triệu - 40 triệu</option>
+                    <option value="over40">Trên 40 triệu</option>
+                </select>
+            </div>
+
+            <!-- LOGO CÁC HÃNG -->
+            <div class="brand-list">
+<div class="brand-logo active" onclick="filterBrand('all', this)"><span style="font-weight:bold; font-size:16px;">Tất Cả</span></div>
+                <div class="brand-logo" onclick="filterBrand('Canon', this)"><img src="https://1000logos.net/wp-content/uploads/2016/10/canon-symbol.jpg" alt="Canon"></div>
+                <div class="brand-logo" onclick="filterBrand('Sony', this)"><img src="https://logos-download.com/wp-content/uploads/2016/02/Sony-Logo.jpg" alt="Sony"></div>
+                <div class="brand-logo" onclick="filterBrand('Fujifilm', this)"><img src="https://tse4.mm.bing.net/th/id/OIP.1GbytOMgjB-_HsgV31Xt_AHaBt?r=0&pid=Api&h=220&P=0" alt="Fujifilm"></div>
+                <div class="brand-logo" onclick="filterBrand('Nikon', this)"><img src="https://www.pngkey.com/png/full/142-1423045_nikon-logo-png.png" alt="Nikon"></div>
+                <div class="brand-logo" onclick="filterBrand('DJI', this)"><img src="https://tse4.mm.bing.net/th/id/OIP.Bvn8IUq6NoZIt7ypnQa-4QHaEX?r=0&pid=Api&h=220&P=0" alt="DJI"></div>
+            </div>
+
+            <!-- SẢN PHẨM NỔI BẬT -->
+            <div id="featuredSection" style="margin-bottom: 50px;">
+                <h2 class="section-title" style="border-color: #d62828; color: #d62828;">🔥 Có thể bạn sẽ thích</h2>
+                <div id="featuredList" class="product-list"></div>
+            </div>
+
+            <!-- DANH SÁCH SẢN PHẨM CHÍNH -->
+            <div>
+                <h2 class="section-title" id="mainListTitle">📷 Tất cả sản phẩm</h2>
+                <div id="productList" class="product-list"></div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+</html>

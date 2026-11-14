@@ -1,0 +1,452 @@
+[
+    {
+        "id": 1,
+        "name": "Canon EOS R50",
+        "brand": "Canon",
+        "category": "Mirrorless",
+        "price": 16490000,
+        "image": "../pages/image/R50.webp",
+        "images": [
+            "../pages/image/R50.webp",
+            "../pages/image/R50.1.webp",
+            "../pages/image/R50.2.webp",
+            "../pages/image/R50.3.webp"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Sony Alpha A6400",
+        "brand": "Sony",
+        "category": "Mirrorless",
+        "price": 18390000,
+        "image": "../pages/image/A6400.webp",
+        "images":[
+            "../pages/image/A6400.webp",
+            "../pages/image/A6400.1.webp",
+            "../pages/image/A6400.2.webp",
+            "../pages/image/A6400.3.webp"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Fujifilm X-T5",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 32990000,
+        "image": "../pages/image/XT5.webp",
+        "images":[
+            "../pages/image/XT5.webp",
+            "../pages/image/XT5.1.webp",
+            "../pages/image/XT5.2.webp",
+            "../pages/image/XT5.3.webp",
+            "../pages/image/XT5.4.webp"
+        ]
+
+    },
+    {
+        "id": 4,
+        "name": "Sony Alpha A6000",
+        "brand": "Sony",
+        "category": "Mirrorless",
+        "price": 7990000,
+        "image": "../pages/image/A6000.webp",
+        "images":[
+            "../pages/image/A6000.webp",
+            "../pages/image/A6000.1.webp",
+            "../pages/image/A6000.2.webp",
+            "../pages/image/A6000.3.webp"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Canon EOS M10 + Kit 15-45mm",
+        "brand": "Canon",
+        "category": "Mirrorless",
+        "price": 7900000,
+        "image": "../pages/image/M10.webp",
+        "images":[
+            "../pages/image/M10.webp",
+            "../pages/image/M10.1.webp",
+            "../pages/image/M10.2.webp",
+            "../pages/image/M10.3.webp"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Fujifilm X-A10",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 7990000,
+        "image": "../pages/image/XA10.webp",
+        "images":[
+            "../pages/image/XA10.webp",
+            "../pages/image/XA10.1.webp",
+            "../pages/image/XA10.2.webp"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Canon EOS 4000D",
+        "brand": "Canon",
+        "category": "DSLR",
+        "price": 6990000,
+       "image": "../pages/image/4000D.webp",
+        "images":[
+            "../pages/image/4000D.webp",
+            "../pages/image/4000D.1.webp",
+            "../pages/image/4000D.2.webp",
+            "../pages/image/4000D.3.webp"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Nikon D3500",
+        "brand": "Nikon",
+        "category": "DSLR",
+        "price": 8990000,
+        "image": "../pages/image/D3500.webp",
+        "images":[
+            "../pages/image/D3500.webp",
+            "../pages/image/D3500.1.webp",
+            "../pages/image/D3500.2.webp",
+            "../pages/image/D3500.3.jpeg",
+            "../pages/image/D3500.4.jpeg"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Nikon D7500",
+        "brand": "Nikon",
+        "category": "DSLR",
+        "price": 21990000,
+        "image": "../pages/image/D7500.webp",
+        "images":[
+            "../pages/image/D7500.webp",
+            "../pages/image/D7500.1.webp",
+            "../pages/image/D7500.2.webp",
+            "../pages/image/D7500.3.webp"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Canon EOS 90D",
+        "brand": "Canon",
+        "category": "DSLR",
+        "price": 24990000,
+        "image": "../pages/image/90D.webp",
+        "images":[
+            "../pages/image/90D.webp",
+            "../pages/image/90D.1.webp",
+            "../pages/image/90D.2.webp",
+            "../pages/image/90D.3.webp"
+        ]
+    },
+
+    {
+        "id": 11,
+        "name": "DJI Osmo Pocket 3",
+        "brand": "DJI",
+        "category": "Compact",
+        "price": 13990000,
+        "image": "../pages/image/PK3.webp",
+        "images":[
+            "../pages/image/PK3.webp",
+            "../pages/image/PK3.1.webp",
+            "../pages/image/PK3.2.webp",
+            "../pages/image/PK3.3.webp"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "DJI Osmo Pocket 4",
+        "brand": "DJI",
+        "category": "Compact",
+        "price": 15990000,
+        "image": "../pages/image/PK4.webp",
+        "images":[
+            "../pages/image/PK4.webp",
+            "../pages/image/PK4.1.webp",
+            "../pages/image/PK4.2.webp",
+            "../pages/image/PK4.3.webp"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Sony ZV-1",
+        "brand": "Sony",
+        "category": "Compact",
+        "price": 14990000,
+        "image": "../pages/image/ZV1.webp",
+        "images":[
+            "../pages/image/ZV1.webp",
+            "../pages/image/ZV1.1.webp",
+            "../pages/image/ZV1.2.webp",
+            "../pages/image/ZV1.3.webp"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Canon PowerShot SX620 HS",
+        "brand": "Canon",
+        "category": "Compact",
+        "price": 6500000,
+        "image": "../pages/image/SX620.webp",
+        "images":[
+            "../pages/image/SX620.webp",
+            "../pages/image/SX620.1.webp",
+            "../pages/image/SX620.2.webp"
+        ]
+    },
+
+    {
+        "id": 15,
+        "name": "Canon RF 50mm F1.8",
+        "brand": "Canon",
+        "category": "Lens",
+        "price": 5490000,
+        "image": "../pages/image/RF50.webp",
+        "images":[
+            "../pages/image/RF50.webp",
+            "../pages/image/RF50.1.webp",
+            "../pages/image/RF50.2.webp",
+            "../pages/image/RF50.3.webp"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Sony FE 50mm F1.8",
+        "brand": "Sony",
+        "category": "Lens",
+        "price": 5990000,
+"image": "../pages/image/FE50.jpeg",
+        "images":[
+            "../pages/image/FE50.jpeg",
+            "../pages/image/FE50.1.jpeg",
+            "../pages/image/FE50.2.jpeg",
+            "../pages/image/FE50.3.jpeg",
+            "../pages/image/FE50.4.jpeg"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Canon EF 50mm F1.8 STM",
+        "brand": "Canon",
+        "category": "Lens",
+        "price": 2500000,
+        "image": "../pages/image/EF50.jpeg",
+        "images":[
+            "../pages/image/EF50.jpeg",
+            "../pages/image/EF50.1.jpeg",
+            "../pages/image/EF50.2.jpeg",
+            "../pages/image/EF50.3.jpeg"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Sony 16-50mm F3.5-5.6 OSS",
+        "brand": "Sony",
+        "category": "Lens",
+        "price": 3990000,
+        "image": "../pages/image/1650.webp",
+        "images":[
+            "../pages/image/1650.webp",
+            "../pages/image/1650.1.webp",
+            "../pages/image/1650.2.webp",
+            "../pages/image/1650.3.webp"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Fujifilm X-A3",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 6500000,
+        "image": "../pages/image/XA3.jpg",
+        "images": [
+            "../pages/image/XA3.jpg",
+            "../pages/image/XA3.1.webp",
+            "../pages/image/XA3.2.webp",
+            "../pages/image/XA3.3.webp"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Fujifilm X-T20",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 11500000,
+        "image": "../pages/image/XT20.jpg",
+        "images": [
+            "../pages/image/XT20.jpg",
+            "../pages/image/XT20.1.webp",
+            "../pages/image/XT20.2.webp",
+            "../pages/image/XT20.3.jpg"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Fujifilm X-T30",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 18500000,
+        "image": "../pages/image/XT30.jpg",
+        "images": [
+            "../pages/image/XT30.jpg",
+            "../pages/image/XT30.1.webp",
+            "../pages/image/XT30.2.webp",
+            "../pages/image/XT30.3.webp"
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Fujifilm X-S10",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 23990000,
+        "image": "../pages/image/XS10.jpg",
+        "images": [
+            "../pages/image/XS10.jpg",
+            "../pages/image/XS10.1.webp",
+            "../pages/image/XS10.2.webp"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Fujifilm X-S20",
+        "brand": "Fujifilm",
+        "category": "Mirrorless",
+        "price": 34990000,
+        "image": "../pages/image/XS20.webp",
+        "images": [
+            "../pages/image/XS20.webp",
+            "../pages/image/XS20.1.webp",
+            "../pages/image/XS20.2.jpg",
+            "../pages/image/XS20.3.jpg"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Canon EOS R6 Mark II",
+        "brand": "Canon",
+        "category": "Mirrorless",
+        "price": 42000000,
+        "image": "../pages/image/R6II.jpg",
+        "images": [
+            "../pages/image/R6II.jpg",
+            "../pages/image/R6II.1.jpg",
+            "../pages/image/R6II.2.jpg",
+            "../pages/image/R6II.3.jpg"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Canon PowerShot G7 X Mark III",
+        "brand": "Canon",
+        "category": "Compact",
+        "price": 19990000,
+        "image": "../pages/image/G7XIII.jpg",
+        "images": [
+            "../pages/image/G7XIII.jpg",
+            "../pages/image/G7XIII.1.jpg",
+            "../pages/image/G7XIII.2.jpg",
+            "../pages/image/G7XIII.3.jpg"
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Sony Alpha A7 III",
+        "brand": "Sony",
+        "category": "Mirrorless",
+        "price": 35000000,
+        "image": "../pages/image/A7III.jpg",
+        "images": [
+            "../pages/image/A7III.jpg",
+            "../pages/image/A7III.1.webp",
+            "../pages/image/A7III.2.jpg",
+            "../pages/image/A7III.3.jpg"
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Fujifilm X100V",
+        "brand": "Fujifilm",
+        "category": "Compact",
+        "price": 36500000,
+        "image": "../pages/image/X100V.jpg",
+        "images": [
+            "../pages/image/X100V.jpg",
+            "../pages/image/X100V.1.jpg",
+            "../pages/image/X100V.2.jpg",
+            "../pages/image/X100V.3.jpg"
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Fujifilm XF 35mm F1.4 R",
+        "brand": "Fujifilm",
+        "category": "Lens",
+        "price": 13490000,
+        "image": "../pages/image/XF35.jpg",
+        "images": [
+            "../pages/image/XF35.jpg",
+            "../pages/image/XF35.1.jpg",
+            "../pages/image/XF35.2.jpg",
+            "../pages/image/XF35.3.jpg"
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Nikon Z30",
+        "brand": "Nikon",
+        "category": "Mirrorless",
+        "price": 17490000,
+        "image": "../pages/image/Z30.jpg",
+        "images": [
+            "../pages/image/Z30.jpg",
+            "../pages/image/Z30.1.jpg",
+            "../pages/image/Z30.2.jpg",
+            "../pages/image/Z30.3.jpg"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Nikon Zfc",
+        "brand": "Nikon",
+        "category": "Mirrorless",
+        "price": 24500000,
+        "image": "../pages/image/ZFC.jpg",
+        "images": [
+            "../pages/image/ZFC.jpg",
+            "../pages/image/ZFC.1.jpg",
+            "../pages/image/ZFC.2.jpg",
+            "../pages/image/ZFC.3.jpg"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Nikon D5600",
+        "brand": "Nikon",
+        "category": "DSLR",
+        "price": 13500000,
+        "image": "../pages/image/D5600.jpeg",
+        "images": [
+            "../pages/image/D5600.jpeg",
+"../pages/image/D5600.1.webp",
+            "../pages/image/D5600.2.webp",
+            "../pages/image/D5600.3.webp"
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Nikon NIKKOR Z 50mm F1.8 S",
+        "brand": "Nikon",
+        "category": "Lens",
+        "price": 14990000,
+        "image": "../pages/image/Z50.jpg",
+        "images": [
+            "../pages/image/Z50.jpg",
+            "../pages/image/Z50.1.jpeg",
+            "../pages/image/Z50.2.jpeg"
+        ]
+    }
+]
