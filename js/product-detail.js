@@ -1,7 +1,7 @@
 // 1. KHO DỮ LIỆU ĐẦY ĐỦ 18 SẢN PHẨM[cite: 8]
 const products = [
-    { id: 1, name: "Canon EOS R50", brand: "Canon", category: "Mirrorless", price: 16490000, image: "https://tse3.mm.bing.net/th/id/OIP.9Sxb3w5iK6Sl72cqWAEWLQHaHa?r=0&pid=Api&h=220&P=0" },
-    { id: 2, name: "Sony Alpha A6400", brand: "Sony", category: "Mirrorless", price: 18390000, image: "https://tse4.mm.bing.net/th/id/OIP.46QrbQ6cnKUHTjjeaQhiJwHaEU?r=0&pid=Api&h=220&P=0" },
+    { id: 1, name: "Canon EOS R50", brand: "Canon", category: "Mirrorless", price: 16490000, image: "../images/Canon_EOS_R50.webp" },
+    { id: 2, name: "Sony Alpha A6400", brand: "Sony", category: "Mirrorless", price: 18390000, image: "../images/Sony_Alpha_A6400.webp" },
     { id: 3, name: "Fujifilm X-T5", brand: "Fujifilm", category: "Mirrorless", price: 32990000, image: "https://m.media-amazon.com/images/I/81ylqx3SdNL.jpg" },
     { id: 4, name: "Sony Alpha A6000", brand: "Sony", category: "Mirrorless", price: 7990000, image: "https://www.ephotozine.com/articles/sony-alpha-a6000--ilce-6000--hands-on-review-24041/images/highres-Sony-Alpha-A6000-4_1398771945.jpg" },
     { id: 5, name: "Canon EOS M10 + Kit 15-45mm", brand: "Canon", category: "Mirrorless", price: 7900000, image: "https://tse3.mm.bing.net/th/id/OIP.KzRfp8ftk4WirCjUBND3HwHaHa?r=0&pid=Api&h=220&P=0" },
@@ -14,8 +14,8 @@ const products = [
     { id: 12, name: "DJI Osmo Pocket 4", brand: "DJI", category: "Compact", price: 15990000, image: "https://videolane.com/wp-content/uploads/Imagined-Osmo-Pocket-4-Gemini.jpg" },
     { id: 13, name: "Sony ZV-1", brand: "Sony", category: "Compact", price: 14990000, image: "https://pxlmag.com/db/images/cameras/gallery/fullsize/Sony-ZV-1/Sony-ZV-1-front.jpg" },
     { id: 14, name: "Canon PowerShot SX620 HS", brand: "Canon", category: "Compact", price: 6500000, image: "https://tse2.mm.bing.net/th/id/OIP.gBtKmGF9GzdmdBlKI35qpgHaHa?r=0&pid=Api&h=220&P=0" },
-    { id: 15, name: "Canon RF 50mm F1.8", brand: "Canon", category: "Lens", price: 5490000, image: "https://radojuva.com/wp-content/uploads/2020/11/canon-rf-lens-50mm-f-1-8-stm-new-2020-5.jpg" },
-    { id: 16, name: "Sony FE 50mm F1.8", brand: "Sony", category: "Lens", price: 5990000, image: "https://tse1.mm.bing.net/th/id/OIP.asz0yW18Fb_LjYwaYf0KLQHaHa?r=0&pid=Api&h=220&P=0" },
+    { id: 15, name: "Canon RF 50mm F1.8", brand: "Canon", category: "Lens", price: 5490000, image: "../images/canon_rf50mm_f18.avif" },
+    { id: 16, name: "Sony FE 50mm F1.8", brand: "Sony", category: "Lens", price: 5990000, image: "../images/sony_fe_50mm_f18.avif" },
     { id: 17, name: "Canon EF 50mm F1.8 STM", brand: "Canon", category: "Lens", price: 2500000, image: "https://www.ephotozine.com/articles/canon-ef-50mm-f-1-8-stm-lens-review-27666/images/highres-Canon-EF-50mm-f1-8-STM-5_1433862749.jpg" },
     { id: 18, name: "Sony 16-50mm F3.5-5.6 OSS", brand: "Sony", category: "Lens", price: 3990000, image: "https://www.ephotozine.com/articles/sony-e-16-50mm-f-3-5-5-6-oss-lens-review-20667/images/highres-sony-16-50mm-oss-lens_1352811627.jpg" }
 ];

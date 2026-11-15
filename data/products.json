@@ -5,7 +5,7 @@
         "brand": "Canon",
         "category": "Mirrorless",
         "price": 16490000,
-        "image": "../pages/image/R50.webp",
+        "image": "../images/Canon_EOS_R50.webp",
         "images": [
             "../pages/image/R50.webp",
             "../pages/image/R50.1.webp",
@@ -19,7 +19,7 @@
         "brand": "Sony",
         "category": "Mirrorless",
         "price": 18390000,
-        "image": "../pages/image/A6400.webp"
+        "image": "../images/Sony_Alpha_A6400.webp"
     },
     {
         "id": 3,
@@ -125,7 +125,7 @@
         "brand": "Canon",
         "category": "Lens",
         "price": 5490000,
-        "image": "https://radojuva.com/wp-content/uploads/2020/11/canon-rf-lens-50mm-f-1-8-stm-new-2020-5.jpg"
+        "image": "../images/canon_rf50mm_f18.avif"
     },
     {
         "id": 16,
@@ -133,7 +133,7 @@
         "brand": "Sony",
         "category": "Lens",
         "price": 5990000,
-        "image": "https://tse1.mm.bing.net/th/id/OIP.asz0yW18Fb_LjYwaYf0KLQHaHa?r=0&pid=Api&h=220&P=0"
+        "image": "../images/sony_fe_50mm_f18.avif"
     },
     {
         "id": 17,
